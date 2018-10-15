@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExpandingRow can render 1`] = `
+<li
+  className="expanding-row twelve-col extraClass expanding-row--clickable"
+  onClick={[Function]}
+>
+  <div
+    className="expanding-row__initial twelve-col no-margin-bottom"
+  >
+    <span>
+      closed
+    </span>
+  </div>
+  <div
+    className="expanding-row__expanded twelve-col"
+    style={
+      Object {
+        "height": "0px",
+        "opacity": 0,
+      }
+    }
+  >
+    <div
+      className="twelve-col no-margin-bottom"
+    >
+      <span>
+        open
+      </span>
+    </div>
+  </div>
+</li>
+`;
