@@ -1,0 +1,23 @@
+{
+  "name": "juju-react-components",
+  "version": "0.1.0",
+  "description": "React components for use with Juju",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/juju/react-components.git"
+  },
+  "keywords": [
+    "juju",
+    "react"
+  ],
+  "author": "Huw Wilkins <huw.wilkins@canonical.com>",
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/juju/react-components/issues"
+  },
+  "homepage": "https://github.com/juju/react-components#readme"
+}
