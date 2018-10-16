@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown Menu can render 1`] = `
+<Panel
+  focus={true}
+  instanceName="dropdown-menu"
+  visible={true}
+>
+  <ul
+    className="dropdown-menu__list"
+  >
+    <li>
+      child
+    </li>
+  </ul>
+</Panel>
+`;

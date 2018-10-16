@@ -1,0 +1,11 @@
+@import '../../scss/mixins';
+
+.panel-component {
+  @extend %floating-panel;
+  position: absolute;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+  }
+}

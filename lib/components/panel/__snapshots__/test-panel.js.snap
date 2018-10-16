@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PanelComponent generates a visible panel when visible flag is provided 1`] = `
+<div
+  className="panel-component custom-instance-name"
+  onClick={[Function]}
+  tabIndex="0"
+>
+  <div
+    className="panel-component__inner"
+    onClick={[Function]}
+  >
+    <div>
+      child
+    </div>
+  </div>
+</div>
+`;
