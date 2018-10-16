@@ -4,6 +4,7 @@
   "description": "React components for use with Juju",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint .",
     "test": "jest"
   },
   "repository": {
@@ -30,6 +31,8 @@
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
     "enzyme-to-json": "^3.3.4",
+    "eslint": "^5.7.0",
+    "eslint-plugin-react": "^7.11.1",
     "jest": "^23.6.0",
     "mutation-observer": "^1.0.3",
     "prop-types": "^15.6.2",
@@ -40,6 +43,7 @@
     "@canonical/maraca": "^0.1.2",
     "jaaslib": "^0.5.0",
     "react": "^16.5.2",
+    "react-click-outside": "^3.0.1",
     "react-dom": "^16.5.2"
   }
 }

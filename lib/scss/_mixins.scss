@@ -1,6 +1,16 @@
 @import './colors';
 @import './variables';
 
+%cold-link-no-hover {
+  color: $cool-grey;
+
+  &:focus,
+  &:active,
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 %floating-panel {
   background-color: $white;
   border-radius: $border-radius;
@@ -16,6 +26,17 @@
   border-radius: 50%;
   -webkit-clip-path: circle(($size / 2 - 1) at center);
   clip-path: circle(($size / 2 - 1) at center);
+}
+
+.link {
+  text-decoration: none;
+  font-weight: normal;
+  cursor: pointer;
+
+  &:hover {
+    color: $link-blue;
+    text-decoration: underline;
+  }
 }
 
 %list-style {

@@ -10,7 +10,7 @@ const config = {
   testMatch: ['<rootDir>/lib/**/test-*.js'],
   moduleNameMapper: {
     '\\.scss$': '<rootDir>/lib/test/proxy-module.js'
-  },
+  }
 };
 
 module.exports = config;

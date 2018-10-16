@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Dropdown can render closed 1`] = `
+<div
+  className="button-dropdown extra-classes"
+>
+  <span
+    aria-controls="headerDropdownMenu"
+    aria-expanded="false"
+    aria-haspopup="true"
+    aria-owns="headerDropdownMenu"
+    className="button-dropdown__button"
+    onClick={[Function]}
+    role="button"
+    tabIndex="0"
+  >
+    <SvgIcon
+      className="button-dropdown__icon"
+      name="icon_16"
+      size="16"
+    />
+    <span
+      className="tooltip__tooltip--below"
+    >
+      <span
+        className="tooltip__inner tooltip__inner--up"
+      >
+        more
+      </span>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Button Dropdown can render open 1`] = `
+<div
+  className="button-dropdown extra-classes"
+>
+  <span
+    aria-controls="headerDropdownMenu"
+    aria-expanded="false"
+    aria-haspopup="true"
+    aria-owns="headerDropdownMenu"
+    className="button-dropdown__button button-dropdown__show-menu"
+    onClick={[Function]}
+    role="button"
+    tabIndex="0"
+  >
+    <SvgIcon
+      className="button-dropdown__icon"
+      name="icon_16"
+      size="16"
+    />
+    <span
+      className="tooltip__tooltip--below"
+    >
+      <span
+        className="tooltip__inner tooltip__inner--up"
+      >
+        more
+      </span>
+    </span>
+  </span>
+  <WrappedDropdownMenu
+    handleClickOutside={[Function]}
+  >
+    <li
+      className="dropdown-menu__list-item"
+      key="item1"
+      role="menuitem"
+      tabIndex="0"
+    >
+      <a
+        className="dropdown-menu__list-item-link"
+        onClick={[Function]}
+        role="button"
+      >
+        item1
+      </a>
+    </li>
+    <li
+      className="dropdown-menu__list-item dropdown-menu__list-item--inactive"
+      key="item2"
+      role="menuitem"
+      tabIndex="0"
+    >
+      item2
+    </li>
+    <li
+      className="dropdown-menu__list-item"
+      key="item-2"
+      role="menuitem"
+      tabIndex="0"
+    >
+      <span>
+        item3
+      </span>
+    </li>
+    <li
+      className="dropdown-menu__list-item dropdown-menu__list-item--active"
+      key="i4"
+      role="menuitem"
+      tabIndex="0"
+    >
+      <a
+        className="dropdown-menu__list-item-link"
+        onClick={[Function]}
+        role="button"
+      >
+        item4
+      </a>
+    </li>
+  </WrappedDropdownMenu>
+</div>
+`;
