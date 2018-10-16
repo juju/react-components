@@ -9,7 +9,7 @@ const config = {
   snapshotSerializers: ['enzyme-to-json/serializer'],
   testMatch: ['<rootDir>/lib/**/test-*.js'],
   moduleNameMapper: {
-    '\\.(scss|png)$': '<rootDir>/lib/test/proxy-module.js'
+    '\\.scss$': '<rootDir>/lib/test/proxy-module.js'
   },
 };
 

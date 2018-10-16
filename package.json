@@ -1,5 +1,5 @@
 {
-  "name": "juju-react-components",
+  "name": "@canonical/juju-react-components",
   "version": "0.1.0",
   "description": "React components for use with Juju",
   "main": "index.js",
@@ -37,6 +37,7 @@
     "sinon": "^7.0.0"
   },
   "dependencies": {
+    "@canonical/maraca": "^0.1.2",
     "jaaslib": "^0.5.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2"
