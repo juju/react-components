@@ -3,6 +3,7 @@
   "version": "0.2.0",
   "description": "React components for use with Juju",
   "main": "index.js",
+  "source": true,
   "scripts": {
     "lint": "eslint .",
     "storybook": "start-storybook -p 9001 -c .storybook",
