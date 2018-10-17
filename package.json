@@ -52,6 +52,8 @@
     "react": "^16.5.2",
     "react-click-outside": "^3.0.1",
     "react-dom": "^16.5.2",
-    "vanilla-framework": "^1.8.0"
+    "vanilla-framework": "^1.8.0",
+    "xterm": "^3.8.0",
+    "xterm-webfont": "^1.1.1"
   }
 }
