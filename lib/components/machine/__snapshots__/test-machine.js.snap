@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Machine can render for a machine 1`] = `
+<div
+  className="machine machine--machine"
+  role="button"
+  tabIndex="0"
+>
+  <ButtonDropdown
+    classes={
+      Array [
+        "machine__dropdown",
+      ]
+    }
+    disableDropdown={false}
+    icon="contextual-menu-16"
+    listItems={
+      Array [
+        Object {
+          "action": [Function],
+          "label": "Delete",
+        },
+      ]
+    }
+  />
+  <ul
+    className="machine__details"
+  >
+    <li
+      className="machine__detail"
+    >
+      <span
+        className="machine__name"
+      >
+        new0
+      </span>
+      chillaxing
+    </li>
+    <li
+      className="machine__detail"
+    >
+      antarctica-east
+    </li>
+    <li
+      className="machine__detail"
+    >
+      spotty
+    </li>
+  </ul>
+  <ul
+    className="machine__hardware"
+  >
+    <li
+      className="machine__hardware-item"
+      key="diskfloppy0"
+    >
+      <span
+        className="machine__hardware-item-label"
+      >
+        disk
+        :
+      </span>
+      <span
+        className="machine__hardware-item-value"
+      >
+        floppy
+      </span>
+    </li>
+    <li
+      className="machine__hardware-item"
+      key="memorygoldfish-like1"
+    >
+      <span
+        className="machine__hardware-item-label"
+      >
+        memory
+        :
+      </span>
+      <span
+        className="machine__hardware-item-value"
+      >
+        goldfish-like
+      </span>
+    </li>
+  </ul>
+  <ul
+    className="machine__units"
+  >
+    <MachineUnit
+      icon="smalldata.svg"
+      key="new0/0"
+      menuItems={null}
+      name="new0/0"
+      status="upper-middle"
+    />
+  </ul>
+</div>
+`;
