@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MachineUnit can render 1`] = `
+<li
+  className="machine-unit machine-unit--upper-middle"
+>
+  <span
+    className="machine-unit__icon"
+  >
+    <img
+      alt="bigmoney/99"
+      className="machine-unit__icon-img"
+      src="smalldata.svg"
+      title="bigmoney/99"
+    />
+  </span>
+</li>
+`;
