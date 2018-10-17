@@ -55,5 +55,9 @@
     "vanilla-framework": "^1.8.0",
     "xterm": "^3.8.0",
     "xterm-webfont": "^1.1.1"
+  },
+  "peerDependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
   }
 }
