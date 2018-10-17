@@ -1,12 +1,13 @@
 {
   "name": "@canonical/juju-react-components",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "React components for use with Juju",
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "test": "jest"
+    "test": "jest",
+    "update-snapshot": "jest --updateSnapshot"
   },
   "repository": {
     "type": "git",

@@ -20,6 +20,7 @@ const StatusRemoteApplicationList = require(
   './lib/components/status/remote-application-list/remote-application-list');
 const StatusTable = require('./lib/components/status/table/table');
 const StatusUnitList = require('./lib/components/status/unit-list/unit-list');
+const Terminal = require('./lib/components/terminal/terminal');
 
 module.exports = {
   BasicTable,
@@ -37,5 +38,6 @@ module.exports = {
   StatusRelationList,
   StatusRemoteApplicationList,
   StatusTable,
-  StatusUnitList
+  StatusUnitList,
+  Terminal
 };
