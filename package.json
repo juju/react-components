@@ -1,8 +1,9 @@
 {
   "name": "@canonical/juju-react-components",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "React components for use with Juju",
   "main": "index.js",
+  "source": true,
   "scripts": {
     "lint": "eslint .",
     "storybook": "start-storybook -p 9001 -c .storybook",
@@ -48,12 +49,14 @@
   },
   "dependencies": {
     "@canonical/maraca": "^0.1.2",
+    "hoist-non-react-statics": "^3.0.1",
     "jaaslib": "^0.5.0",
-    "react": "^16.5.2",
-    "react-click-outside": "^3.0.1",
-    "react-dom": "^16.5.2",
     "vanilla-framework": "^1.8.0",
     "xterm": "^3.8.0",
     "xterm-webfont": "^1.1.1"
+  },
+  "peerDependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
   }
 }
