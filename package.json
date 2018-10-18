@@ -7,8 +7,7 @@
   "scripts": {
     "lint": "eslint .",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "test": "jest",
-    "update-snapshot": "jest --updateSnapshot"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
