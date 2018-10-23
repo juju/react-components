@@ -2,25 +2,25 @@
 
 'use strict';
 
-const BasicTable = require('./lib/components/basic-table/basic-table');
-const Button = require('./lib/components/button/button');
-const ButtonRow = require('./lib/components/button-row/button-row');
-const ExpandingRow = require('./lib/components/expanding-row/expanding-row');
-const Machine = require('./lib/components/machine/machine');
-const MachineUnit = require('./lib/components/machine-unit/machine-unit');
-const Panel = require('./lib/components/panel/panel');
-const Status = require('./lib/components/status/status/status');
+const BasicTable = require('./components/basic-table/basic-table');
+const Button = require('./components/button/button');
+const ButtonRow = require('./components/button-row/button-row');
+const ExpandingRow = require('./components/expanding-row/expanding-row');
+const Machine = require('./components/machine/machine');
+const MachineUnit = require('./components/machine-unit/machine-unit');
+const Panel = require('./components/panel/panel');
+const Status = require('./components/status/status/status');
 const StatusApplicationList = require(
-  './lib/components/status/application-list/application-list');
-const StatusLabel = require('./lib/components/status/label/label');
-const StatusMachineList = require('./lib/components/status/machine-list/machine-list');
-const StatusModel = require('./lib/components/status/model/model');
-const StatusRelationList = require('./lib/components/status/relation-list/relation-list');
+  './components/status/application-list/application-list');
+const StatusLabel = require('./components/status/label/label');
+const StatusMachineList = require('./components/status/machine-list/machine-list');
+const StatusModel = require('./components/status/model/model');
+const StatusRelationList = require('./components/status/relation-list/relation-list');
 const StatusRemoteApplicationList = require(
-  './lib/components/status/remote-application-list/remote-application-list');
-const StatusTable = require('./lib/components/status/table/table');
-const StatusUnitList = require('./lib/components/status/unit-list/unit-list');
-const Terminal = require('./lib/components/terminal/terminal');
+  './components/status/remote-application-list/remote-application-list');
+const StatusTable = require('./components/status/table/table');
+const StatusUnitList = require('./components/status/unit-list/unit-list');
+const Terminal = require('./components/terminal/terminal');
 
 module.exports = {
   BasicTable,

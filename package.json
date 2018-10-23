@@ -2,10 +2,12 @@
   "name": "@canonical/juju-react-components",
   "version": "0.2.0",
   "description": "React components for use with Juju",
-  "main": "index.js",
+  "main": "lib/index.js",
   "source": true,
   "scripts": {
+    "build": "rm -rf lib && NODE_ENV=production babel src --out-dir lib --copy-files --ignore src/**/test-*.js,src/**/*.stories.js,src/test",
     "lint": "eslint .",
+    "prepublishOnly": "npm run build",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "jest"
   },
@@ -25,6 +27,7 @@
   "homepage": "https://github.com/juju/react-components#readme",
   "devDependencies": {
     "@storybook/react": "^3.4.11",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-jest": "^23.6.0",
     "babel-preset-env": "^1.7.0",
@@ -41,6 +44,8 @@
     "mutation-observer": "^1.0.3",
     "node-sass": "^4.9.4",
     "prop-types": "^15.6.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
     "sass-loader": "^7.1.0",
     "shapeup": "^0.2.5",
     "sinon": "^7.0.0",
