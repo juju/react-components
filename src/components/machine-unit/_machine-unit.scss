@@ -6,19 +6,19 @@
 
   &--uncommitted {
     .machine-unit__icon {
-      border: 1px solid $uncommitted;
+      border: 1px solid $color-focus;
     }
   }
 
   &--error {
     .machine-unit__icon {
-      border: 1px solid $error;
+      border: 1px solid $color-negative;
     }
   }
 
   &--pending {
     .machine-unit__icon {
-      border: 1px solid $pending;
+      border: 1px solid $color-caution;
     }
   }
 
@@ -26,7 +26,7 @@
     display: inline-block;
     margin-right: 10px;
     padding: 2px;
-    border: 1px solid $canvas-background;
+    border: 1px solid $color-light;
     border-radius: 50%;
     line-height: 20px;
 

@@ -14,7 +14,7 @@
     height: 6px;
     position: absolute;
     display: block;
-    background-color: $white;
+    background-color: $color-x-light;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
@@ -56,7 +56,7 @@
 
       &:hover {
         text-decoration: none;
-        background-color: $light-grey;
+        background-color: $color-light;
       }
     }
   }

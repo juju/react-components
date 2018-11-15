@@ -8,14 +8,14 @@
   }
 
   &--ok {
-    color: $success;
+    color: $color-positive;
   }
 
   &--error {
-    color: $error;
+    color: $color-negative;
   }
 
   &--pending {
-    color: $pending;
+    color: $color-caution;
   }
 }

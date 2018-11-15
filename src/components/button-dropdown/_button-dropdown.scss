@@ -20,7 +20,7 @@
     }
 
     &:hover {
-      color: $dark-warm-grey !important;
+      color: $color-mid-dark !important;
       text-decoration: none !important;
     }
   }
@@ -30,7 +30,7 @@
   }
 
   &__show-menu {
-    color: $dark-warm-grey !important;
+    color: $color-mid-dark !important;
 
     .tooltip__tooltip--below {
       display: none !important;

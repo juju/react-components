@@ -6,8 +6,8 @@
   box-shadow: $box-shadow-dark;
 
   &__header {
-    background-color: $dark-warm-grey;
-    color: $light-grey;
+    background-color: $color-mid-dark;
+    color: $color-light;
     text-align: center;
     line-height: 30px;
     height: 30px;
@@ -20,15 +20,15 @@
       line-height: 36px;
 
       .svg-icon {
-        stroke: $mid-grey;
-        fill: $mid-grey;
+        stroke: $color-mid-light;
+        fill: $color-mid-light;
         margin-right: 12px;
         cursor: pointer;
       }
 
       .svg-icon:hover {
-        stroke: $light-grey;
-        fill: $light-grey;
+        stroke: $color-light;
+        fill: $color-light;
       }
     }
   }

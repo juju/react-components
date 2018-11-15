@@ -17,13 +17,13 @@
   .button--deployment,
   .button--inline-deployment {
     @extend %button-pattern;
-    color: $white;
-    background-color: $uncommitted;
+    color: $color-x-light;
+    background-color: $color-focus;
 
     &:focus,
     &:active,
     &:hover {
-      background-color: darken($uncommitted, 10%);
+      background-color: darken($color-focus, 10%);
     }
 
     &:disabled,
@@ -31,7 +31,7 @@
       &:focus,
       &:active,
       &:hover {
-        background-color: $uncommitted;
+        background-color: $color-focus;
       }
     }
   }

@@ -29,22 +29,22 @@
     position: relative;
     left: -50%;
     padding: 5px 10px;
-    background-color: $black;
+    background-color: $color-x-dark;
     border-radius: 3px;
-    color: $white;
+    color: $color-x-light;
     font-size: 14px;
     white-space: nowrap;
     z-index: 1;
   }
 
   &__inner--up:after {
-    @include diamond($black, 8px, 'up');
+    @include diamond($color-x-dark, 8px, 'up');
     left: 50%;
     margin-left: -4px;
   }
 
   &__inner--down:after {
-    @include diamond($black, 8px, 'down');
+    @include diamond($color-x-dark, 8px, 'down');
     left: 50%;
     margin-left: -4px;
   }

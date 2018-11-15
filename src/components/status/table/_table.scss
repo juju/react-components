@@ -13,11 +13,11 @@
     }
 
     &--pending {
-      border-color: $pending;
+      border-color: $color-caution;
     }
 
     &--error {
-      border-color: $error;
+      border-color: $color-negative;
     }
   }
 }
