@@ -5,7 +5,7 @@ import 'vanilla-framework/scss/build.scss';
 
 setAddon(JSXAddon);
 
-const req = require.context('../lib/components', true, /\.stories\.js$/);
+const req = require.context('../src/components', true, /\.stories\.js$/);
 
 function loadStories() {
   req.keys().forEach((filename) => req(filename));

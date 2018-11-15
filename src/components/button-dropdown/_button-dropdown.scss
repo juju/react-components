@@ -1,20 +1,17 @@
-@import '../../scss/colors';
 @import '../../scss/mixins';
 @import '../../scss/tooltip';
+@import '../../scss/variables';
 
 .button-dropdown {
   position: relative;
 
   &__button {
-    @extend .link;
     @extend .tooltip;
     display: inline-block;
-    transition: background-color .2s;
+    transition: background-color 0.2s;
     padding: 11px;
     cursor: pointer;
-    // scss-lint:disable ImportantRule
     color: $warm-grey !important;
-    // scss-lint:enable ImportantRule
     text-decoration: none;
 
     &-with-text {
@@ -23,10 +20,8 @@
     }
 
     &:hover {
-      // scss-lint:disable ImportantRule
       color: $dark-warm-grey !important;
       text-decoration: none !important;
-      // scss-lint:enable ImportantRule
     }
   }
 
@@ -35,14 +30,10 @@
   }
 
   &__show-menu {
-    // scss-lint:disable ImportantRule
     color: $dark-warm-grey !important;
-    // scss-lint:enable ImportantRule
 
     .tooltip__tooltip--below {
-      // scss-lint:disable ImportantRule
       display: none !important;
-      // scss-lint:enable ImportantRule
     }
   }
 }

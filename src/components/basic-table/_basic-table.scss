@@ -1,8 +1,7 @@
-@import '../../scss/colors';
 @import '../../scss/mixins';
+@import '../../scss/variables';
 
 .basic-table {
-  @extend %list-style;
   margin-bottom: 20px;
   width: 100%;
 
@@ -10,13 +9,13 @@
   .v1 & {
     border-bottom: 1px solid $color-mid-light;
 
-    thead, tbody {
-      display: block;
+    thead,
+    tbody {
       width: 100%;
     }
 
     tr {
-      padding: 0 .75rem;
+      padding: 0 0.75rem;
     }
 
     td,
@@ -27,9 +26,8 @@
 
     tbody {
       tr {
-
         &.is-expanded {
-          padding: 0.5rem .75rem;
+          padding: 0.5rem 0.75rem;
         }
       }
     }
@@ -45,22 +43,26 @@
     transition: all 0.25s;
 
     &-link {
+      position: absolute;
+      top: 0;
       bottom: 0;
       left: 0;
-      position: absolute;
       right: 0;
-      top: 0;
-      // Raise the main link above the children so that it can be clicked on.
-      z-index: 1;
     }
 
     &--clickable {
       cursor: pointer;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $white;
+      }
     }
 
     &.is-expanded {
       background: $color-x-light;
-      box-shadow: 0 1px 5px 1px hsla(0,0%,7%,.2);
+      box-shadow: 0 1px 5px 1px hsla(0, 0%, 7%, 0.2);
       border: 0;
       margin: 1rem 0;
     }
@@ -68,6 +70,10 @@
     &:first-child.is-expanded {
       border-top: 1px solid $color-mid-light;
     }
+  }
+
+  &__cell {
+    position: relative;
   }
 
   tbody tr.basic-table__row--clickable:hover {

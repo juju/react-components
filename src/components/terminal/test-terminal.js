@@ -4,7 +4,6 @@
 const React = require('react');
 const enzyme = require('enzyme');
 
-const SvgIcon = require('../svg-icon/svg-icon');
 const Terminal = require('./terminal');
 
 describe('Terminal', () => {
@@ -53,39 +52,7 @@ describe('Terminal', () => {
 
   it('should render', () => {
     wrapper = renderComponent();
-    const actions = wrapper.find('.juju-shell__header-actions span');
-    const expected = (
-      <div className="juju-shell">
-        <div className="juju-shell__header">
-          <span className="juju-shell__header-label">Juju Shell</span>
-          <div className="juju-shell__header-actions">
-            <span
-              onClick={actions.at(0).prop('onClick')}
-              role="button"
-              tabIndex="0">
-              <SvgIcon name="minimize-bar_16" size="16" />
-            </span>
-            <span
-              onClick={actions.at(1).prop('onClick')}
-              role="button"
-              tabIndex="0">
-              <SvgIcon name="maximize-bar_16" size="16" />
-            </span>
-            <span
-              onClick={actions.at(2).prop('onClick')}
-              role="button"
-              tabIndex="0">
-              <SvgIcon name="close_16" size="16" />
-            </span>
-          </div>
-        </div>
-        <div
-          className={'juju-shell__terminal juju-shell__terminal--min'}
-          ref="terminal"
-          style={{}}>
-        </div>
-      </div>);
-    assert.compareJSX(wrapper, expected);
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('instantiates the terminal and connects to the websocket on mount', () => {

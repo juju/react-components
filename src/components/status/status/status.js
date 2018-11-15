@@ -4,7 +4,6 @@
 const PropTypes = require('prop-types');
 const React = require('react');
 const shapeup = require('shapeup');
-const maracaPropTypes = require('@canonical/maraca').propTypes;
 
 const StatusApplicationList = require('../application-list/application-list');
 const StatusModel = require('../model/model');
@@ -14,6 +13,7 @@ const StatusRemoteApplicationList = require(
 const StatusRelationList = require('../relation-list/relation-list');
 const StatusUnitList = require('../unit-list/unit-list');
 const Panel = require('../../panel/panel');
+const maracaPropTypes = require('@canonical/maraca').propTypes;
 const utils = require('../../../utils/utils');
 
 /** Status React component used to display Juju status. */

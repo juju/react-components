@@ -1,4 +1,5 @@
-@import '../../scss/colors';
+@import '../../scss/mixins';
+@import '../../scss/variables';
 
 /// Button classes
 /// @group Buttons
@@ -49,7 +50,7 @@
   padding: 12px 24px;
   text-align: center;
   text-decoration: none;
-  transition: background-color .2s;
+  transition: background-color 0.2s;
   border-radius: 2px;
   outline: none;
   font-weight: 300;
@@ -58,7 +59,7 @@
 
   &:disabled,
   &.button--disabled {
-    opacity: .5;
+    opacity: 0.5;
     cursor: default;
   }
 }
@@ -70,7 +71,7 @@
   justify-content: space-between;
   align-items: center;
 
-  [class*="button"] {
+  [class*='button'] {
     white-space: nowrap;
     margin: 10px 20px;
   }

@@ -3,10 +3,11 @@
 
 const PropTypes = require('prop-types');
 const React = require('react');
-const maracaPropTypes = require('@canonical/maraca').propTypes;
 
 const StatusLabel = require('../label/label');
 const StatusTable = require('../table/table');
+
+const maracaPropTypes = require('@canonical/maraca').propTypes;
 const utils = require('../../../utils/utils');
 
 class StatusUnitList extends React.Component {

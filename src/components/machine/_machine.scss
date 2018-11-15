@@ -1,4 +1,3 @@
-@import '../../scss/colors';
 @import '../../scss/mixins';
 @import '../../scss/variables';
 
@@ -39,7 +38,7 @@
 
   &--machine,
   &--container {
-    transition: background-color .3s;
+    transition: background-color 0.3s;
 
     &:focus,
     &:active,

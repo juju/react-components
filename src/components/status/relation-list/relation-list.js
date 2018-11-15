@@ -3,8 +3,8 @@
 
 const PropTypes = require('prop-types');
 const React = require('react');
-const maracaPropTypes = require('@canonical/maraca').propTypes;
 
+const maracaPropTypes = require('@canonical/maraca').propTypes;
 const StatusTable = require('../table/table');
 
 class StatusRelationList extends React.Component {
