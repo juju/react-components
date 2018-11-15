@@ -1,15 +1,15 @@
 'use strict';
 
 const config = {
-  roots: ['<rootDir>/lib/'],
+  roots: ['<rootDir>/src/'],
   setupFiles: [
-    '<rootDir>/lib/test/jest-setup.js',
-    '<rootDir>/lib/test/enzyme-setup.js'
+    '<rootDir>/src/test/jest-setup.js',
+    '<rootDir>/src/test/enzyme-setup.js'
   ],
   snapshotSerializers: ['enzyme-to-json/serializer'],
-  testMatch: ['<rootDir>/lib/**/test-*.js'],
+  testMatch: ['<rootDir>/src/**/test-*.js'],
   moduleNameMapper: {
-    '\\.scss$': '<rootDir>/lib/test/proxy-module.js'
+    '\\.scss$': '<rootDir>/src/test/proxy-module.js'
   }
 };
 
