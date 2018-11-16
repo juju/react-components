@@ -217,13 +217,13 @@ class Status extends React.Component {
 };
 
 Status.propTypes = {
-  generateApplicationOnClick: PropTypes.func.isRequired,
-  generateApplicationURL: PropTypes.func.isRequired,
-  generateCharmURL: PropTypes.func.isRequired,
-  generateMachineOnClick: PropTypes.func.isRequired,
-  generateMachineURL: PropTypes.func.isRequired,
-  generateUnitOnClick: PropTypes.func.isRequired,
-  generateUnitURL: PropTypes.func.isRequired,
+  generateApplicationOnClick: PropTypes.func,
+  generateApplicationURL: PropTypes.func,
+  generateCharmURL: PropTypes.func,
+  generateMachineOnClick: PropTypes.func,
+  generateMachineURL: PropTypes.func,
+  generateUnitOnClick: PropTypes.func,
+  generateUnitURL: PropTypes.func,
   getIconPath: PropTypes.func.isRequired,
   model: shapeup.shape({
     cloud: PropTypes.string,
@@ -233,9 +233,9 @@ Status.propTypes = {
     sla: PropTypes.string,
     version: PropTypes.string
   }),
-  navigateToApplication: PropTypes.func.isRequired,
-  navigateToCharm: PropTypes.func.isRequired,
-  navigateToMachine: PropTypes.func.isRequired,
+  navigateToApplication: PropTypes.func,
+  navigateToCharm: PropTypes.func,
+  navigateToMachine: PropTypes.func,
   valueStore: PropTypes.shape({
     applications: maracaPropTypes.applications,
     machines: maracaPropTypes.machines,

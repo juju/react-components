@@ -30,12 +30,31 @@ class StatusUnitList extends React.Component {
   }
 
   /**
+    Generate the machine id.
+    @param {String} machineID - A machine id.
+    @returns {Object} The id JSX.
+  */
+  _generateMachineID(machineID) {
+    const {generateMachineURL, onMachineClick} = this.props;
+    if (!generateMachineURL || !onMachineClick) {
+      return (<span>{machineID}</span>);
+    }
+    return (
+      <a
+        className="status-view__link"
+        href={generateMachineURL ? generateMachineURL(machineID) : null}
+        onClick={onMachineClick ? onMachineClick.bind(this, machineID) : null}>
+        {machineID}
+      </a>);
+  }
+
+  /**
     Generate the unit rows.
     @returns {Array} The list of rows. The returned array and containing objects
       should match the row format required by the BasicTable component.
   */
   _generateRows() {
-    const {units} = this.props;
+    const {generateUnitOnClick, generateUnitURL, units} = this.props;
     return Object.keys(units).reduce((accumulator, key) => {
       const unit = units[key];
       let application = this.props.applications[unit.application];
@@ -64,8 +83,8 @@ class StatusUnitList extends React.Component {
         classes: [utils.getStatusClass(
           'status-table__row--',
           [agentStatus, workloadStatus])],
-        onClick: this.props.generateUnitOnClick(unit.name),
-        clickURL: this.props.generateUnitURL(unit.name),
+        onClick: generateUnitOnClick ? generateUnitOnClick(unit.name) : null,
+        clickURL: generateUnitURL ? generateUnitURL(unit.name) : null,
         columns: [{
           columnSize: 2,
           content: (
@@ -83,13 +102,7 @@ class StatusUnitList extends React.Component {
             <StatusLabel status={agentStatus} />) : null
         }, {
           columnSize: 1,
-          content: (
-            <a
-              className="status-view__link"
-              href={this.props.generateMachineURL(unit.machineID)}
-              onClick={this.props.onMachineClick.bind(this, unit.machineID)}>
-              {unit.machineID}
-            </a>)
+          content: this._generateMachineID(unit.machineID)
         }, {
           columnSize: 2,
           content: publicAddress
@@ -141,11 +154,11 @@ class StatusUnitList extends React.Component {
 
 StatusUnitList.propTypes = {
   applications: maracaPropTypes.applications,
-  generateMachineURL: PropTypes.func.isRequired,
-  generateUnitOnClick: PropTypes.func.isRequired,
-  generateUnitURL: PropTypes.func.isRequired,
+  generateMachineURL: PropTypes.func,
+  generateUnitOnClick: PropTypes.func,
+  generateUnitURL: PropTypes.func,
   getIconPath: PropTypes.func.isRequired,
-  onMachineClick: PropTypes.func.isRequired,
+  onMachineClick: PropTypes.func,
   statusFilter: PropTypes.string,
   units: maracaPropTypes.units
 };

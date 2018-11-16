@@ -13,12 +13,15 @@ describe('StatusApplicationList', () => {
     <StatusApplicationList
       applications={options.applications || applications}
       generateApplicationOnClick={
-        options.generateApplicationOnClick || sinon.stub().returns(sinon.stub())}
+        options.generateApplicationOnClick === undefined ?
+          sinon.stub().returns(sinon.stub()) : options.generateApplicationOnClick}
       generateApplicationURL={
-        options.generateApplicationURL || sinon.stub().returns('http://example.com')}
-      generateCharmURL={options.generateCharmURL || sinon.stub()}
+        options.generateApplicationURL === undefined ?
+          sinon.stub().returns('http://example.com') : options.generateApplicationURL}
+      generateCharmURL={
+        options.generateCharmURL === undefined ? sinon.stub() : options.generateCharmURL}
       getIconPath={options.getIconPath || sinon.stub().returns('icon.svg')}
-      onCharmClick={options.onCharmClick || sinon.stub()}
+      onCharmClick={options.onCharmClick === undefined ? sinon.stub() : options.onCharmClick}
       statusFilter={options.statusFilter}
       units={options.units || units} />
   );
@@ -103,6 +106,16 @@ describe('StatusApplicationList', () => {
     };
     units['etcd/0'] = {};
     const wrapper = renderComponent();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('renders without links', () => {
+    const wrapper = renderComponent({
+      generateApplicationOnClick: null,
+      generateApplicationURL: null,
+      generateCharmURL: null,
+      onCharmClick: null
+    });
     expect(wrapper).toMatchSnapshot();
   });
 });
