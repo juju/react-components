@@ -20,7 +20,7 @@ describe('Terminal', () => {
       <Terminal
         addNotification={options.addNotification || sinon.stub()}
         address={options.address || '1.2.3.4:123'}
-        changeState={options.changeState || sinon.stub()}
+        close={options.close || sinon.stub()}
         commands={options.commands}
         creds={options.creds || {
           user: 'user',
@@ -153,9 +153,7 @@ describe('Terminal', () => {
     // Call the onClick for the X
     wrapper.find('.juju-shell__header-actions span').at(2).simulate('click');
     assert.equal(instance.ws.onclose.callCount, 0);
-    assert.deepEqual(instance.props.changeState.args[0], [{
-      terminal: null
-    }]);
+    assert.equal(instance.props.close.callCount, 1);
   });
 
   it('handles unexpected WebSocket closures', () => {
