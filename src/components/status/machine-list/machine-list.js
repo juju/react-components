@@ -3,8 +3,8 @@
 
 const PropTypes = require('prop-types');
 const React = require('react');
-const maracaPropTypes = require('@canonical/maraca').propTypes;
 
+const maracaPropTypes = require('@canonical/maraca').propTypes;
 const StatusLabel = require('../label/label');
 const StatusTable = require('../table/table');
 
@@ -20,7 +20,7 @@ class StatusMachineList extends React.Component {
     @returns {Array} The list of rows.
   */
   _generateRows() {
-    const {machines} = this.props;
+    const {generateMachineOnClick, generateMachineURL, machines} = this.props;
     return Object.keys(machines).map(key => {
       const machine = machines[key];
       let publicAddress;
@@ -34,8 +34,8 @@ class StatusMachineList extends React.Component {
       return {
         classes: [getStatusClass(
           'status-table__row--', agentStatus)],
-        onClick: this.props.generateMachineOnClick(machine.id),
-        clickURL: this.props.generateMachineURL(machine.id),
+        onClick: generateMachineOnClick ? generateMachineOnClick(machine.id) : null,
+        clickURL: generateMachineURL ? generateMachineURL(machine.id) : null,
         columns: [{
           columnSize: 1,
           content: machine.id
@@ -92,8 +92,8 @@ class StatusMachineList extends React.Component {
 };
 
 StatusMachineList.propTypes = {
-  generateMachineOnClick: PropTypes.func.isRequired,
-  generateMachineURL: PropTypes.func.isRequired,
+  generateMachineOnClick: PropTypes.func,
+  generateMachineURL: PropTypes.func,
   machines: maracaPropTypes.machines,
   statusFilter: PropTypes.string
 };

@@ -70,9 +70,7 @@ storiesOf('StatusUnitList', module)
   .addWithJSX('basic display', () => (
     <StatusUnitList
       applications={applications}
-      changeState={() => {}}
       generateMachineURL={() => {}}
-      generatePath={() => {}}
       generateUnitOnClick={() => {}}
       generateUnitURL={() => {}}
       getIconPath={() => {}}

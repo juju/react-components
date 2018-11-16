@@ -8,12 +8,12 @@ const React = require('react');
 /** Basic table React component used to display data in a table structure. */
 class BasicTableCell extends React.Component {
   render() {
-    const className = classNames(this.props.classes);
+    const className = classNames('basic-table__cell', this.props.classes);
     const isHeader = this.props.isHeader;
     let content = this.props.content;
     // if there is no content then add a space so that the column doesn't
     // collapse.
-    if ((typeof (content) === 'string' && content.replace(/\s/g, '') === '') ||
+    if ((typeof(content) === 'string' && content.replace(/\s/g, '') === '') ||
       content === undefined || content === null) {
       content = (<span>&nbsp;</span>);
     }
@@ -25,6 +25,7 @@ class BasicTableCell extends React.Component {
     } else {
       return (
         <td className={className}>
+          {this.props.link}
           {content}
         </td>);
     }
@@ -33,9 +34,9 @@ class BasicTableCell extends React.Component {
 
 BasicTableCell.propTypes = {
   classes: PropTypes.arrayOf(PropTypes.string),
-  columnSize: PropTypes.number,
   content: PropTypes.node,
-  isHeader: PropTypes.bool
+  isHeader: PropTypes.bool,
+  link: PropTypes.node
 };
 
 module.exports = BasicTableCell;

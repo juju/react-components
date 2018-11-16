@@ -173,3 +173,140 @@ exports[`Status renders without entities 1`] = `
   </div>
 </Panel>
 `;
+
+exports[`Status renders without link functions 1`] = `
+<Panel
+  focus={true}
+  instanceName="status-view"
+  visible={true}
+>
+  <div
+    className="status-view__content"
+  >
+    <StatusModel
+      changeFilter={[Function]}
+      counts={
+        Object {
+          "applications": 1,
+          "machines": 1,
+          "relations": 1,
+          "remoteApplications": 1,
+          "units": 1,
+        }
+      }
+      highestStatus="ok"
+      model={
+        Object {
+          "cloud": "aws",
+          "environmentName": "my-model",
+          "modelUUID": "myuuid",
+          "region": "neutral zone",
+          "sla": "advanced",
+          "version": "2.42.47",
+        }
+      }
+      statusFilter={null}
+    />
+    <StatusRemoteApplicationList
+      remoteApplications={
+        Object {
+          "app": Object {},
+        }
+      }
+      statusFilter={null}
+    />
+    <StatusApplicationList
+      applications={
+        Object {
+          "app": Object {
+            "status": Object {
+              "current": "",
+            },
+          },
+        }
+      }
+      generateApplicationOnClick={null}
+      generateApplicationURL={null}
+      generateCharmURL={null}
+      getIconPath={[Function]}
+      onCharmClick={null}
+      statusFilter={null}
+      units={
+        Object {
+          "unit": Object {
+            "agentStatus": Object {
+              "current": "",
+            },
+            "workloadStatus": Object {
+              "current": "",
+            },
+          },
+        }
+      }
+    />
+    <StatusUnitList
+      applications={
+        Object {
+          "app": Object {
+            "status": Object {
+              "current": "",
+            },
+          },
+        }
+      }
+      generateMachineURL={null}
+      generateUnitOnClick={null}
+      generateUnitURL={null}
+      getIconPath={[Function]}
+      onMachineClick={null}
+      statusFilter={null}
+      units={
+        Object {
+          "unit": Object {
+            "agentStatus": Object {
+              "current": "",
+            },
+            "workloadStatus": Object {
+              "current": "",
+            },
+          },
+        }
+      }
+    />
+    <StatusMachineList
+      generateMachineOnClick={null}
+      generateMachineURL={null}
+      machines={
+        Object {
+          "machine": Object {
+            "agentStatus": Object {
+              "current": "",
+            },
+          },
+        }
+      }
+      statusFilter={null}
+    />
+    <StatusRelationList
+      applications={
+        Object {
+          "app": Object {
+            "status": Object {
+              "current": "",
+            },
+          },
+        }
+      }
+      generateApplicationURL={null}
+      getIconPath={[Function]}
+      onApplicationClick={null}
+      relations={
+        Object {
+          "relation": Object {},
+        }
+      }
+      statusFilter={null}
+    />
+  </div>
+</Panel>
+`;

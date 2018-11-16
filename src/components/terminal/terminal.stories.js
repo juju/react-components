@@ -15,7 +15,6 @@ storiesOf('Terminal', module)
     <Terminal
       addNotification={() => {}}
       address="1.2.3.4:123"
-      changeState={() => {}}
       creds={{
         user: 'user',
         password: 'password',

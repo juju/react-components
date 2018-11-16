@@ -1,8 +1,7 @@
-@import './colors';
 @import './variables';
 
 %cold-link-no-hover {
-  color: $cool-grey;
+  color: $color-brand;
 
   &:focus,
   &:active,
@@ -30,7 +29,7 @@
 }
 
 %floating-panel {
-  background-color: $white;
+  background-color: $color-x-light;
   border-radius: $border-radius;
   box-shadow: $box-shadow;
 }
@@ -52,7 +51,7 @@
   cursor: pointer;
 
   &:hover {
-    color: $link-blue;
+    color: $color-link;
     text-decoration: underline;
   }
 }

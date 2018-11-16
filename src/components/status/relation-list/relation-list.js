@@ -3,8 +3,8 @@
 
 const PropTypes = require('prop-types');
 const React = require('react');
-const maracaPropTypes = require('@canonical/maraca').propTypes;
 
+const maracaPropTypes = require('@canonical/maraca').propTypes;
 const StatusTable = require('../table/table');
 
 class StatusRelationList extends React.Component {
@@ -15,8 +15,9 @@ class StatusRelationList extends React.Component {
     @returns {Object} The link element.
   */
   _generateRelationAppLink(name) {
+    const {generateApplicationURL, onApplicationClick} = this.props;
     let app = this.props.applications[name];
-    if (!app) {
+    if (!app || (!generateApplicationURL && !onApplicationClick)) {
       // If the application is not in the DB it must be remote app so don't
       // link to it.
       return (<span>{name}</span>);
@@ -24,8 +25,8 @@ class StatusRelationList extends React.Component {
     return (
       <a
         className="status-view__link"
-        href={this.props.generateApplicationURL(name)}
-        onClick={this.props.onApplicationClick.bind(this, name)}>
+        href={generateApplicationURL ? generateApplicationURL(name) : null}
+        onClick={onApplicationClick ? onApplicationClick.bind(this, name) : null}>
         <img className="status-view__icon" src={this.props.getIconPath(app)} />
         {name}
       </a>);
@@ -107,9 +108,9 @@ class StatusRelationList extends React.Component {
 
 StatusRelationList.propTypes = {
   applications: maracaPropTypes.applications,
-  generateApplicationURL: PropTypes.func.isRequired,
+  generateApplicationURL: PropTypes.func,
   getIconPath: PropTypes.func.isRequired,
-  onApplicationClick: PropTypes.func.isRequired,
+  onApplicationClick: PropTypes.func,
   relations: maracaPropTypes.relations,
   statusFilter: PropTypes.string
 };

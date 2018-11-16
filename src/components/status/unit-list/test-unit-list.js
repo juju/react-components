@@ -12,15 +12,16 @@ describe('StatusUnitList', () => {
   const renderComponent = (options = {}) => enzyme.shallow(
     <StatusUnitList
       applications={options.applications || applications}
-      changeState={options.changeState || sinon.stub()}
-      generateMachineURL={options.generateCharmURL || sinon.stub()}
-      generatePath={options.generatePath || sinon.stub()}
+      generateMachineURL={
+        options.generateCharmURL === undefined ? sinon.stub() : options.generateCharmURL}
       generateUnitOnClick={
-        options.generateUnitOnClick || sinon.stub().returns(sinon.stub())}
+        options.generateUnitOnClick === undefined ?
+          sinon.stub().returns(sinon.stub()) : options.generateUnitOnClick}
       generateUnitURL={
-        options.generateUnitURL || sinon.stub().returns('http://example.com')}
+        options.generateUnitURL === undefined ?
+          sinon.stub().returns('http://example.com') : options.generateUnitURL}
       getIconPath={options.getIconPath || sinon.stub().returns('icon.svg')}
-      onMachineClick={options.onCharmClick || sinon.stub()}
+      onMachineClick={options.onCharmClick === undefined ? sinon.stub() : options.onCharmClick}
       statusFilter={options.statusFilter}
       units={options.units || units} />
   );
@@ -114,5 +115,15 @@ describe('StatusUnitList', () => {
     assert.equal(
       wrapper.prop('rows')[0].columns[4].content.props.className.includes('status-view__link'),
       true);
+  });
+
+  it('renders without links', () => {
+    const wrapper = renderComponent({
+      generateMachineURL: null,
+      generateUnitOnClick: null,
+      generateUnitURL: null,
+      onMachineClick: null
+    });
+    expect(wrapper).toMatchSnapshot();
   });
 });

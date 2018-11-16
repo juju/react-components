@@ -87,9 +87,7 @@ storiesOf('StatusRelationList', module)
   .addWithJSX('basic display', () => (
     <StatusRelationList
       applications={applications}
-      changeState={() => {}}
       generateApplicationURL={() => {}}
-      generatePath={() => {}}
       getIconPath={() => {}}
       onApplicationClick={() => {}}
       relations={relations} />

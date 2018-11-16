@@ -1,21 +1,21 @@
-@import '../../../scss/colors';
+@import '../../../scss/variables';
 
 .status-label {
   &--pending,
   &--error,
   &--ok {
-    transition: color .3s;
+    transition: color 0.3s;
   }
 
   &--ok {
-    color: $success;
+    color: $color-positive;
   }
 
   &--error {
-    color: $error;
+    color: $color-negative;
   }
 
   &--pending {
-    color: $pending;
+    color: $color-caution;
   }
 }

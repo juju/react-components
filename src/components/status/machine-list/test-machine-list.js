@@ -12,9 +12,11 @@ describe('StatusMachineList', () => {
   const renderComponent = (options = {}) => enzyme.shallow(
     <StatusMachineList
       generateMachineOnClick={
-        options.generateMachineOnClick || sinon.stub().returns(sinon.stub())}
+        options.generateMachineOnClick === undefined ?
+          sinon.stub().returns(sinon.stub()) : options.generateMachineOnClick}
       generateMachineURL={
-        options.generateMachineURL || sinon.stub().returns('http://example.com')}
+        options.generateMachineURL === undefined ?
+          sinon.stub().returns('http://example.com') : options.generateMachineURL}
       machines={options.machines || machines}
       statusFilter={options.statusFilter} />
   );
@@ -73,6 +75,14 @@ describe('StatusMachineList', () => {
   it('renders with missing details', () => {
     machines['0'] = {};
     const wrapper = renderComponent();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('renders without links', () => {
+    const wrapper = renderComponent({
+      generateMachineOnClick: null,
+      generateMachineURL: null
+    });
     expect(wrapper).toMatchSnapshot();
   });
 });

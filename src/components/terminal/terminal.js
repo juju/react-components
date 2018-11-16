@@ -226,15 +226,6 @@ class Terminal extends React.Component {
     textarea.focus();
   }
 
-  /**
-    Calls to set the app state to terminal: null.
-  */
-  close() {
-    this.props.changeState({
-      terminal: null
-    });
-  }
-
   render() {
     const state = this.state;
     const terminalClassNames = classnames(
@@ -256,7 +247,7 @@ class Terminal extends React.Component {
             <span onClick={this.setSize.bind(this, 'max')} role="button" tabIndex="0">
               <SvgIcon name="maximize-bar_16" size="16" />
             </span>
-            <span onClick={this.close.bind(this)} role="button" tabIndex="0">
+            <span onClick={this.props.close} role="button" tabIndex="0">
               <SvgIcon name="close_16" size="16" />
             </span>
           </div>
@@ -275,7 +266,7 @@ Terminal.propTypes = {
   // not available.
   address: PropTypes.string,
   // Credentials are used to authenticate the user to the jujushell service.
-  changeState: PropTypes.func.isRequired,
+  close: PropTypes.func.isRequired,
   commands: PropTypes.array,
   creds: shapeup.shape({
     user: PropTypes.string,

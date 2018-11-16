@@ -11,18 +11,38 @@ describe('Status', () => {
 
   const renderComponent = (options = {}) => enzyme.shallow(
     <Status
-      generateApplicationOnClick={options.generateApplicationOnClick || sinon.stub()}
-      generateApplicationURL={options.generateApplicationURL || sinon.stub()}
-      generateCharmURL={options.generateCharmURL || sinon.stub()}
-      generateMachineOnClick={options.generateMachineOnClick || sinon.stub()}
-      generateMachineURL={options.generateMachineURL || sinon.stub()}
-      generateUnitOnClick={options.generateUnitOnClick || sinon.stub()}
-      generateUnitURL={options.generateUnitURL || sinon.stub()}
+      generateApplicationOnClick={
+        options.generateApplicationOnClick === undefined ?
+          sinon.stub() : options.generateApplicationOnClick}
+      generateApplicationURL={
+        options.generateApplicationURL === undefined ?
+          sinon.stub() : options.generateApplicationURL}
+      generateCharmURL={
+        options.generateCharmURL === undefined ?
+          sinon.stub() : options.generateCharmURL}
+      generateMachineOnClick={
+        options.generateMachineOnClick === undefined ?
+          sinon.stub() : options.generateMachineOnClick}
+      generateMachineURL={
+        options.generateMachineURL === undefined ?
+          sinon.stub() : options.generateMachineURL}
+      generateUnitOnClick={
+        options.generateUnitOnClick === undefined ?
+          sinon.stub() : options.generateUnitOnClick}
+      generateUnitURL={
+        options.generateUnitURL === undefined ?
+          sinon.stub() : options.generateUnitURL}
       getIconPath={options.getIconPath || sinon.stub()}
       model={options.model || model}
-      navigateToApplication={options.navigateToApplication || sinon.stub()}
-      navigateToCharm={options.navigateToCharm || sinon.stub()}
-      navigateToMachine={options.navigateToMachine || sinon.stub()}
+      navigateToApplication={
+        options.navigateToApplication === undefined ?
+          sinon.stub() : options.navigateToApplication}
+      navigateToCharm={
+        options.navigateToCharm === undefined ?
+          sinon.stub() : options.navigateToCharm}
+      navigateToMachine={
+        options.navigateToMachine === undefined ?
+          sinon.stub() : options.navigateToMachine}
       valueStore={options.valueStore || valueStore} />
   );
 
@@ -79,6 +99,22 @@ describe('Status', () => {
 
   it('renders with entites', () => {
     const wrapper = renderComponent();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('renders without link functions', () => {
+    const wrapper = renderComponent({
+      generateApplicationOnClick: null,
+      generateApplicationURL: null,
+      generateCharmURL: null,
+      generateMachineOnClick: null,
+      generateMachineURL: null,
+      generateUnitOnClick: null,
+      generateUnitURL: null,
+      navigateToApplication: null,
+      navigateToCharm: null,
+      navigateToMachine: null
+    });
     expect(wrapper).toMatchSnapshot();
   });
 

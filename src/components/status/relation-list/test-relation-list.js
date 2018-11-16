@@ -12,11 +12,12 @@ describe('StatusRelationList', () => {
   const renderComponent = (options = {}) => enzyme.shallow(
     <StatusRelationList
       applications={options.applications || applications}
-      changeState={options.changeState || sinon.stub()}
-      generateApplicationURL={options.generateApplicationURL || sinon.stub()}
-      generatePath={options.generatePath || sinon.stub()}
+      generateApplicationURL={
+        options.generateApplicationURL === undefined ?
+          sinon.stub() : options.generateApplicationURL}
       getIconPath={options.getIconPath || sinon.stub().returns('icon.svg')}
-      onApplicationClick={options.onApplicationClick || sinon.stub()}
+      onApplicationClick={
+        options.onApplicationClick === undefined ? sinon.stub() : options.onApplicationClick}
       relations={options.relations || relations}
       statusFilter={options.statusFilter} />
   );
@@ -109,6 +110,14 @@ describe('StatusRelationList', () => {
     applications.etcd = {};
     relations['1'] = {};
     const wrapper = renderComponent();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('renders without links', () => {
+    const wrapper = renderComponent({
+      generateApplicationURL: null,
+      onApplicationClick: null
+    });
     expect(wrapper).toMatchSnapshot();
   });
 });
