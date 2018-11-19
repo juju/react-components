@@ -7,15 +7,15 @@ const enzyme = require('enzyme');
 const Panel = require('./panel');
 
 describe('PanelComponent', function() {
-
   const renderComponent = (options = {}) => {
     const wrapper = enzyme.shallow(
       <Panel
         clickAction={options.clickAction}
         focus={options.focus}
         instanceName={options.instanceName || 'custom-instance-name'}
-        visible={options.visible === undefined ? true : options.visible}>
-        {options.children || (<div>child</div>)}
+        visible={options.visible === undefined ? true : options.visible}
+      >
+        {options.children || <div>child</div>}
       </Panel>,
       {disableLifecycleMethods: true}
     );

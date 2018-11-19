@@ -59,36 +59,39 @@ const relations = {
     modelUUID: '32c9c2db-0955-459a-8201-539657ef0da1',
     key: 'kubernetes-master:etcd etcd:db',
     id: 1,
-    endpoints: [{
-      applicationName: 'kubernetes-master',
-      relation: {
-        name: 'etcd',
-        role: 'requirer',
-        'interface': 'etcd',
-        optional: false,
-        limit: 1,
-        scope: 'global'
+    endpoints: [
+      {
+        applicationName: 'kubernetes-master',
+        relation: {
+          name: 'etcd',
+          role: 'requirer',
+          interface: 'etcd',
+          optional: false,
+          limit: 1,
+          scope: 'global'
+        }
+      },
+      {
+        applicationName: 'etcd',
+        relation: {
+          name: 'db',
+          role: 'provider',
+          interface: 'etcd',
+          optional: false,
+          limit: 0,
+          scope: 'global'
+        }
       }
-    }, {
-      applicationName: 'etcd',
-      relation: {
-        name: 'db',
-        role: 'provider',
-        'interface': 'etcd',
-        optional: false,
-        limit: 0,
-        scope: 'global'
-      }
-    }]
+    ]
   }
 };
 
-storiesOf('StatusRelationList', module)
-  .addWithJSX('basic display', () => (
-    <StatusRelationList
-      applications={applications}
-      generateApplicationURL={() => {}}
-      getIconPath={() => {}}
-      onApplicationClick={() => {}}
-      relations={relations} />
-  ));
+storiesOf('StatusRelationList', module).addWithJSX('basic display', () => (
+  <StatusRelationList
+    applications={applications}
+    generateApplicationURL={() => {}}
+    getIconPath={() => {}}
+    onApplicationClick={() => {}}
+    relations={relations}
+  />
+));

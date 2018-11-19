@@ -9,18 +9,23 @@ const StatusRelationList = require('./relation-list');
 describe('StatusRelationList', () => {
   let applications, relations;
 
-  const renderComponent = (options = {}) => enzyme.shallow(
-    <StatusRelationList
-      applications={options.applications || applications}
-      generateApplicationURL={
-        options.generateApplicationURL === undefined ?
-          sinon.stub() : options.generateApplicationURL}
-      getIconPath={options.getIconPath || sinon.stub().returns('icon.svg')}
-      onApplicationClick={
-        options.onApplicationClick === undefined ? sinon.stub() : options.onApplicationClick}
-      relations={options.relations || relations}
-      statusFilter={options.statusFilter} />
-  );
+  const renderComponent = (options = {}) =>
+    enzyme.shallow(
+      <StatusRelationList
+        applications={options.applications || applications}
+        generateApplicationURL={
+          options.generateApplicationURL === undefined
+            ? sinon.stub()
+            : options.generateApplicationURL
+        }
+        getIconPath={options.getIconPath || sinon.stub().returns('icon.svg')}
+        onApplicationClick={
+          options.onApplicationClick === undefined ? sinon.stub() : options.onApplicationClick
+        }
+        relations={options.relations || relations}
+        statusFilter={options.statusFilter}
+      />
+    );
 
   beforeEach(() => {
     applications = {
@@ -76,27 +81,30 @@ describe('StatusRelationList', () => {
         modelUUID: '32c9c2db-0955-459a-8201-539657ef0da1',
         key: 'kubernetes-master:etcd etcd:db',
         id: 1,
-        endpoints: [{
-          applicationName: 'kubernetes-master',
-          relation: {
-            name: 'etcd',
-            role: 'requirer',
-            'interface': 'etcd',
-            optional: false,
-            limit: 1,
-            scope: 'global'
+        endpoints: [
+          {
+            applicationName: 'kubernetes-master',
+            relation: {
+              name: 'etcd',
+              role: 'requirer',
+              interface: 'etcd',
+              optional: false,
+              limit: 1,
+              scope: 'global'
+            }
+          },
+          {
+            applicationName: 'etcd',
+            relation: {
+              name: 'db',
+              role: 'provider',
+              interface: 'etcd',
+              optional: false,
+              limit: 0,
+              scope: 'global'
+            }
           }
-        }, {
-          applicationName: 'etcd',
-          relation: {
-            name: 'db',
-            role: 'provider',
-            'interface': 'etcd',
-            optional: false,
-            limit: 0,
-            scope: 'global'
-          }
-        }]
+        ]
       }
     };
   });

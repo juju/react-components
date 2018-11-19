@@ -8,28 +8,35 @@ const enzyme = require('enzyme');
 const ButtonDropdown = require('./button-dropdown');
 
 describe('Button Dropdown', function() {
-
-  const renderComponent = (options = {}) => enzyme.shallow(
-    <ButtonDropdown
-      activeItem="i4"
-      classes={['extra-classes']}
-      disableDropdown={options.disableDropdown || false}
-      icon={options.icon || 'icon_16'}
-      listItems={options.listItems || [{
-        action: sinon.stub(),
-        label: 'item1'
-      }, {
-        label: 'item2'
-      }, {
-        element: (<span>item3</span>)
-      }, {
-        action: sinon.stub(),
-        id: 'i4',
-        label: 'item4'
-      }]}
-      tooltip="more" />
-  );
-
+  const renderComponent = (options = {}) =>
+    enzyme.shallow(
+      <ButtonDropdown
+        activeItem="i4"
+        classes={['extra-classes']}
+        disableDropdown={options.disableDropdown || false}
+        icon={options.icon || 'icon_16'}
+        listItems={
+          options.listItems || [
+            {
+              action: sinon.stub(),
+              label: 'item1'
+            },
+            {
+              label: 'item2'
+            },
+            {
+              element: <span>item3</span>
+            },
+            {
+              action: sinon.stub(),
+              id: 'i4',
+              label: 'item4'
+            }
+          ]
+        }
+        tooltip="more"
+      />
+    );
 
   it('can render closed', () => {
     const wrapper = renderComponent();

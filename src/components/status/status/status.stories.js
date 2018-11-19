@@ -15,42 +15,48 @@ const model = {
   version: '2.42.47'
 };
 const valueStore = {
-  applications: {app: {
-    status: {
-      current: ''
+  applications: {
+    app: {
+      status: {
+        current: ''
+      }
     }
-  }},
-  machines: {machine: {
-    agentStatus: {
-      current: ''
+  },
+  machines: {
+    machine: {
+      agentStatus: {
+        current: ''
+      }
     }
-  }},
+  },
   relations: {relation: {}},
   remoteApplications: {app: {}},
-  units: {unit: {
-    agentStatus: {
-      current: ''
-    },
-    workloadStatus: {
-      current: ''
+  units: {
+    unit: {
+      agentStatus: {
+        current: ''
+      },
+      workloadStatus: {
+        current: ''
+      }
     }
-  }}
+  }
 };
 
-storiesOf('Status', module)
-  .addWithJSX('basic display', () => (
-    <Status
-      generateApplicationOnClick={() => {}}
-      generateApplicationURL={() => {}}
-      generateCharmURL={() => {}}
-      generateMachineOnClick={() => {}}
-      generateMachineURL={() => {}}
-      generateUnitOnClick={() => {}}
-      generateUnitURL={() => {}}
-      getIconPath={() => {}}
-      model={model}
-      navigateToApplication={() => {}}
-      navigateToCharm={() => {}}
-      navigateToMachine={() => {}}
-      valueStore={valueStore} />
-  ));
+storiesOf('Status', module).addWithJSX('basic display', () => (
+  <Status
+    generateApplicationOnClick={() => {}}
+    generateApplicationURL={() => {}}
+    generateCharmURL={() => {}}
+    generateMachineOnClick={() => {}}
+    generateMachineURL={() => {}}
+    generateUnitOnClick={() => {}}
+    generateUnitURL={() => {}}
+    getIconPath={() => {}}
+    model={model}
+    navigateToApplication={() => {}}
+    navigateToCharm={() => {}}
+    navigateToMachine={() => {}}
+    valueStore={valueStore}
+  />
+));

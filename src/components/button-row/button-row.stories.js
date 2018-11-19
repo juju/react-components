@@ -9,21 +9,28 @@ const ButtonRow = require('./button-row');
 storiesOf('ButtonRow', module)
   .addWithJSX('with single button', () => (
     <ButtonRow
-      buttons={[{
-        title: 'My button',
-        type: 'submit',
-        action: () => {}
-      }]} />
+      buttons={[
+        {
+          title: 'My button',
+          type: 'submit',
+          action: () => {}
+        }
+      ]}
+    />
   ))
   .addWithJSX('with multipe buttons', () => (
     <ButtonRow
-      buttons={[{
-        title: 'My button',
-        type: 'submit',
-        action: () => {}
-      }, {
-        title: 'Another button',
-        type: 'submit',
-        action: () => {}
-      }]} />
+      buttons={[
+        {
+          title: 'My button',
+          type: 'submit',
+          action: () => {}
+        },
+        {
+          title: 'Another button',
+          type: 'submit',
+          action: () => {}
+        }
+      ]}
+    />
   ));

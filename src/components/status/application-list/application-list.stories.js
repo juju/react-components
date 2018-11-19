@@ -41,15 +41,19 @@ const units = {
     publicAddress: '13.211.141.188',
     privateAddress: '172.31.6.46',
     machineID: '2',
-    ports: [{
-      protocol: 'tcp',
-      number: 2379
-    }],
-    portRanges: [{
-      fromPort: 2379,
-      toPort: 2379,
-      protocol: 'tcp'
-    }],
+    ports: [
+      {
+        protocol: 'tcp',
+        number: 2379
+      }
+    ],
+    portRanges: [
+      {
+        fromPort: 2379,
+        toPort: 2379,
+        protocol: 'tcp'
+      }
+    ],
     subordinate: false,
     workloadStatus: {
       current: 'active',
@@ -66,14 +70,14 @@ const units = {
   }
 };
 
-storiesOf('StatusApplicationList', module)
-  .addWithJSX('basic display', () => (
-    <StatusApplicationList
-      applications={applications}
-      generateApplicationOnClick={() => {}}
-      generateApplicationURL={() => {}}
-      generateCharmURL={() => {}}
-      getIconPath={() => {}}
-      onCharmClick={() => {}}
-      units={units} />
-  ));
+storiesOf('StatusApplicationList', module).addWithJSX('basic display', () => (
+  <StatusApplicationList
+    applications={applications}
+    generateApplicationOnClick={() => {}}
+    generateApplicationURL={() => {}}
+    generateCharmURL={() => {}}
+    getIconPath={() => {}}
+    onCharmClick={() => {}}
+    units={units}
+  />
+));

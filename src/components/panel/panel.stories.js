@@ -6,10 +6,8 @@ const {storiesOf} = require('@storybook/react');
 
 const Panel = require('./panel');
 
-storiesOf('Panel', module)
-  .addWithJSX('basic display', () => (
-    <Panel
-      instanceName="this-panel">
-      <div>child</div>
-    </Panel>
-  ));
+storiesOf('Panel', module).addWithJSX('basic display', () => (
+  <Panel instanceName="this-panel">
+    <div>child</div>
+  </Panel>
+));

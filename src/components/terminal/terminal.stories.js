@@ -10,15 +10,15 @@ const websocket = function() {};
 websocket.prototype.send = () => {};
 websocket.prototype.close = () => {};
 
-storiesOf('Terminal', module)
-  .addWithJSX('basic display', () => (
-    <Terminal
-      addNotification={() => {}}
-      address="1.2.3.4:123"
-      creds={{
-        user: 'user',
-        password: 'password',
-        macaroons: {}
-      }}
-      WebSocket={websocket} />
-  ));
+storiesOf('Terminal', module).addWithJSX('basic display', () => (
+  <Terminal
+    addNotification={() => {}}
+    address="1.2.3.4:123"
+    creds={{
+      user: 'user',
+      password: 'password',
+      macaroons: {}
+    }}
+    WebSocket={websocket}
+  />
+));

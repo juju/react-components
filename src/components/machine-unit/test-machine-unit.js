@@ -6,17 +6,17 @@ const enzyme = require('enzyme');
 
 const MachineUnit = require('./machine-unit');
 
-
 describe('MachineUnit', () => {
-
-  const renderComponent = (options = {}) => enzyme.shallow(
-    <MachineUnit
-      classes={options.classes}
-      icon={options.icon || 'smalldata.svg'}
-      menuItems={options.menuItems}
-      name={options.name || 'bigmoney/99'}
-      status={options.status || 'upper-middle'} />
-  );
+  const renderComponent = (options = {}) =>
+    enzyme.shallow(
+      <MachineUnit
+        classes={options.classes}
+        icon={options.icon || 'smalldata.svg'}
+        menuItems={options.menuItems}
+        name={options.name || 'bigmoney/99'}
+        status={options.status || 'upper-middle'}
+      />
+    );
 
   it('can render', () => {
     const wrapper = renderComponent();
@@ -24,10 +24,12 @@ describe('MachineUnit', () => {
   });
 
   it('can render with a menu', () => {
-    const menuItems = [{
-      label: 'Destroy',
-      action: sinon.stub()
-    }];
+    const menuItems = [
+      {
+        label: 'Destroy',
+        action: sinon.stub()
+      }
+    ];
     const wrapper = renderComponent({
       menuItems
     });

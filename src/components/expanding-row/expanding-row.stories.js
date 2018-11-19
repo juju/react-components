@@ -14,15 +14,13 @@ storiesOf('ExpandingRow', module)
     </ExpandingRow>
   ))
   .addWithJSX('begin expanded', () => (
-    <ExpandingRow
-      expanded={true}>
+    <ExpandingRow expanded={true}>
       <span>closed</span>
       <span>open</span>
     </ExpandingRow>
   ))
   .addWithJSX('disabled', () => (
-    <ExpandingRow
-      clickable={false}>
+    <ExpandingRow clickable={false}>
       <span>closed</span>
       <span>open</span>
     </ExpandingRow>
