@@ -40,10 +40,12 @@
     "enzyme-to-json": "^3.3.4",
     "eslint": "^5.7.0",
     "eslint-plugin-react": "^7.11.1",
+    "husky": "^1.1.4",
     "jest": "^23.6.0",
     "mutation-observer": "^1.0.3",
     "node-sass": "^4.9.4",
     "prettier": "1.15.2",
+    "pretty-quick": "^1.8.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
@@ -64,5 +66,10 @@
   "peerDependencies": {
     "react": "^16.5.2",
     "react-dom": "^16.5.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }
