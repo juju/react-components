@@ -22,11 +22,6 @@ const model = {
   version: '2.42.47'
 };
 
-storiesOf('StatusModel', module)
-  .addWithJSX('basic display', () => (
-    <StatusModel
-      changeFilter={() => {}}
-      counts={counts}
-      highestStatus={'error'}
-      model={model} />
-  ));
+storiesOf('StatusModel', module).addWithJSX('basic display', () => (
+  <StatusModel changeFilter={() => {}} counts={counts} highestStatus={'error'} model={model} />
+));

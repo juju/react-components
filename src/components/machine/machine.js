@@ -24,21 +24,13 @@ class Machine extends React.Component {
     }
     const items = hardware.map((item, i) => {
       return (
-        <li
-          className="machine__hardware-item"
-          key={item.label + item.value + i}>
-          <span className="machine__hardware-item-label">
-            {item.label}:
-          </span>
-          <span className="machine__hardware-item-value">
-            {item.value}
-          </span>
-        </li>);
+        <li className="machine__hardware-item" key={item.label + item.value + i}>
+          <span className="machine__hardware-item-label">{item.label}:</span>
+          <span className="machine__hardware-item-value">{item.value}</span>
+        </li>
+      );
     });
-    return (
-      <ul className="machine__hardware">
-        {items}
-      </ul>);
+    return <ul className="machine__hardware">{items}</ul>;
   }
 
   /**
@@ -50,10 +42,14 @@ class Machine extends React.Component {
     if (!units || !units.length) {
       return null;
     }
-    const menuItems = isContainer ? [{
-      label: 'Destroy',
-      action: () => {}
-    }] : null;
+    const menuItems = isContainer
+      ? [
+          {
+            label: 'Destroy',
+            action: () => {}
+          }
+        ]
+      : null;
     const components = [];
     units.forEach(unit => {
       components.push(
@@ -62,12 +58,11 @@ class Machine extends React.Component {
           key={unit.id}
           menuItems={menuItems}
           name={unit.name}
-          status={unit.status} />);
+          status={unit.status}
+        />
+      );
     });
-    return (
-      <ul className="machine__units">
-        {components}
-      </ul>);
+    return <ul className="machine__units">{components}</ul>;
   }
 
   /**
@@ -98,16 +93,12 @@ class Machine extends React.Component {
     }
     return (
       <li className="machine__detail machine__terminal-action">
-        <SvgIcon
-          className="machine__ssh-icon"
-          name="code-snippet_24"
-          size="16" />
-        <Button
-          action={sshAction}
-          type="inline-base link machine__ssh-action">
+        <SvgIcon className="machine__ssh-icon" name="code-snippet_24" size="16" />
+        <Button action={sshAction} type="inline-base link machine__ssh-action">
           {this.props.sshLabel}
         </Button>
-      </li>);
+      </li>
+    );
   }
 
   /**
@@ -119,10 +110,7 @@ class Machine extends React.Component {
     if (!menuItems) {
       return null;
     }
-    return (
-      <ButtonDropdown
-        classes={['machine__dropdown']}
-        listItems={menuItems} />);
+    return <ButtonDropdown classes={['machine__dropdown']} listItems={menuItems} />;
   }
 
   /**
@@ -131,10 +119,7 @@ class Machine extends React.Component {
   */
   _generateDetails() {
     const {machine} = this.props;
-    const machineName = (
-      <span className="machine__name">
-        {machine.name}
-      </span>);
+    const machineName = <span className="machine__name">{machine.name}</span>;
     if (this.props.isContainer) {
       return machineName;
     }
@@ -144,14 +129,11 @@ class Machine extends React.Component {
           {machineName}
           {machine.status}
         </li>
-        {machine.region ? (<li className="machine__detail">
-          {machine.region}
-        </li>) : null}
+        {machine.region ? <li className="machine__detail">{machine.region}</li> : null}
         {this._generateTerminalAction()}
-        {machine.series ? (<li className="machine__detail">
-          {machine.series}
-        </li>) : null}
-      </ul>);
+        {machine.series ? <li className="machine__detail">{machine.series}</li> : null}
+      </ul>
+    );
   }
 
   render() {
@@ -160,7 +142,8 @@ class Machine extends React.Component {
         className={this._generateClasses()}
         onClick={this.props.onClick}
         role="button"
-        tabIndex="0">
+        tabIndex="0"
+      >
         {this._generateMenu()}
         {this._generateDetails()}
         {this._generateHardware()}
@@ -169,15 +152,17 @@ class Machine extends React.Component {
       </div>
     );
   }
-};
+}
 
 Machine.propTypes = {
   children: PropTypes.any,
   classes: PropTypes.arrayOf(PropTypes.string),
-  hardware: PropTypes.arrayOf(PropTypes.shape({
-    label: PropTypes.string.isRequired,
-    value: PropTypes.any.isRequired
-  })),
+  hardware: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      value: PropTypes.any.isRequired
+    })
+  ),
   isContainer: PropTypes.bool,
   machine: PropTypes.shape({
     name: PropTypes.string.isRequired,
@@ -186,19 +171,23 @@ Machine.propTypes = {
     series: PropTypes.string,
     status: PropTypes.string
   }).isRequired,
-  menuItems: PropTypes.arrayOf(PropTypes.shape({
-    label: PropTypes.string.isRequired,
-    action: PropTypes.func
-  })),
+  menuItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      action: PropTypes.func
+    })
+  ),
   onClick: PropTypes.func,
   sshAction: PropTypes.func,
   sshLabel: PropTypes.string,
-  units: PropTypes.arrayOf(PropTypes.shape({
-    icon: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    status: PropTypes.string.isRequired
-  }))
+  units: PropTypes.arrayOf(
+    PropTypes.shape({
+      icon: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      status: PropTypes.string.isRequired
+    })
+  )
 };
 
 module.exports = Machine;

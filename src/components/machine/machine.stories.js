@@ -13,46 +13,44 @@ const machine = {
   series: 'spotty',
   status: 'chillaxing'
 };
-const units = [{
-  icon: 'smalldata.svg',
-  id: 'new0/0',
-  name: 'new0/0',
-  status: 'upper-middle'
-}];
+const units = [
+  {
+    icon: 'smalldata.svg',
+    id: 'new0/0',
+    name: 'new0/0',
+    status: 'upper-middle'
+  }
+];
 
 storiesOf('Machine', module)
   .addWithJSX('basic machine', () => (
     <Machine
-      hardware={[{
-        label: 'disk',
-        value: 'floppy'
-      }, {
-        label: 'memory',
-        value: 'goldfish-like'
-      }]}
+      hardware={[
+        {
+          label: 'disk',
+          value: 'floppy'
+        },
+        {
+          label: 'memory',
+          value: 'goldfish-like'
+        }
+      ]}
       machine={machine}
-      menuItems={[{
-        label: 'Delete',
-        action: () => {}
-      }]}
-      units={units} />
+      menuItems={[
+        {
+          label: 'Delete',
+          action: () => {}
+        }
+      ]}
+      units={units}
+    />
   ))
   .addWithJSX('basic container', () => (
-    <Machine
-      isContainer={true}
-      machine={machine}
-      units={units} />
+    <Machine isContainer={true} machine={machine} units={units} />
   ))
-  .addWithJSX('without hardware menu or units', () => (
-    <Machine
-      machine={machine} />
-  ))
+  .addWithJSX('without hardware menu or units', () => <Machine machine={machine} />)
   .addWithJSX('with a terminal action', () => (
-    <Machine
-      isContainer={true}
-      machine={machine}
-      sshAction={() => {}}
-      sshLabel="1.1.1.1" />
+    <Machine isContainer={true} machine={machine} sshAction={() => {}} sshLabel="1.1.1.1" />
   ))
   .addWithJSX('as a root container', () => (
     <Machine
@@ -63,11 +61,11 @@ storiesOf('Machine', module)
         region: 'antarctica-east',
         series: 'spotty',
         status: 'chillaxing'
-      }} />
+      }}
+    />
   ))
   .addWithJSX('with children', () => (
-    <Machine
-      machine={machine}>
+    <Machine machine={machine}>
       <span className="kids">content</span>
     </Machine>
   ));

@@ -7,7 +7,7 @@ const {storiesOf} = require('@storybook/react');
 const StatusRemoteApplicationList = require('./remote-application-list');
 
 const remoteApplications = {
-  'mysql': {
+  mysql: {
     modelUUID: 'fe1060e8-0a10-424f-8007-d45c69ca04b5',
     name: 'mysql',
     offerUUID: 'efb9f9b7-65f3-4f6f-86a4-58bebf32c1f4',
@@ -22,8 +22,6 @@ const remoteApplications = {
   }
 };
 
-storiesOf('StatusRemoteApplicationList', module)
-  .addWithJSX('basic display', () => (
-    <StatusRemoteApplicationList
-      remoteApplications={remoteApplications} />
-  ));
+storiesOf('StatusRemoteApplicationList', module).addWithJSX('basic display', () => (
+  <StatusRemoteApplicationList remoteApplications={remoteApplications} />
+));

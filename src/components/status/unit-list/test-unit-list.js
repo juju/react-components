@@ -9,22 +9,31 @@ const StatusUnitList = require('./unit-list');
 describe('StatusUnitList', () => {
   let applications, units;
 
-  const renderComponent = (options = {}) => enzyme.shallow(
-    <StatusUnitList
-      applications={options.applications || applications}
-      generateMachineURL={
-        options.generateCharmURL === undefined ? sinon.stub() : options.generateCharmURL}
-      generateUnitOnClick={
-        options.generateUnitOnClick === undefined ?
-          sinon.stub().returns(sinon.stub()) : options.generateUnitOnClick}
-      generateUnitURL={
-        options.generateUnitURL === undefined ?
-          sinon.stub().returns('http://example.com') : options.generateUnitURL}
-      getIconPath={options.getIconPath || sinon.stub().returns('icon.svg')}
-      onMachineClick={options.onCharmClick === undefined ? sinon.stub() : options.onCharmClick}
-      statusFilter={options.statusFilter}
-      units={options.units || units} />
-  );
+  const renderComponent = (options = {}) =>
+    enzyme.shallow(
+      <StatusUnitList
+        applications={options.applications || applications}
+        generateMachineURL={
+          options.generateCharmURL === undefined ? sinon.stub() : options.generateCharmURL
+        }
+        generateUnitOnClick={
+          options.generateUnitOnClick === undefined
+            ? sinon.stub().returns(sinon.stub())
+            : options.generateUnitOnClick
+        }
+        generateUnitURL={
+          options.generateUnitURL === undefined
+            ? sinon.stub().returns('http://example.com')
+            : options.generateUnitURL
+        }
+        getIconPath={options.getIconPath || sinon.stub().returns('icon.svg')}
+        onMachineClick={
+          options.onCharmClick === undefined ? sinon.stub() : options.onCharmClick
+        }
+        statusFilter={options.statusFilter}
+        units={options.units || units}
+      />
+    );
 
   beforeEach(() => {
     applications = {
@@ -62,15 +71,19 @@ describe('StatusUnitList', () => {
         publicAddress: '13.211.141.188',
         privateAddress: '172.31.6.46',
         machineID: '2',
-        ports: [{
-          protocol: 'tcp',
-          number: 2379
-        }],
-        portRanges: [{
-          fromPort: 2379,
-          toPort: 2379,
-          protocol: 'tcp'
-        }],
+        ports: [
+          {
+            protocol: 'tcp',
+            number: 2379
+          }
+        ],
+        portRanges: [
+          {
+            fromPort: 2379,
+            toPort: 2379,
+            protocol: 'tcp'
+          }
+        ],
         subordinate: false,
         workloadStatus: {
           current: 'active',
@@ -114,7 +127,8 @@ describe('StatusUnitList', () => {
     const wrapper = renderComponent();
     assert.equal(
       wrapper.prop('rows')[0].columns[4].content.props.className.includes('status-view__link'),
-      true);
+      true
+    );
   });
 
   it('renders without links', () => {

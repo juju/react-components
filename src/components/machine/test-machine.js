@@ -9,20 +9,22 @@ const Machine = require('./machine');
 describe('Machine', () => {
   let machine, units;
 
-  const renderComponent = (options = {}) => enzyme.shallow(
-    <Machine
-      classes={options.classes}
-      hardware={options.hardware}
-      isContainer={options.isContainer}
-      machine={options.machine || machine}
-      menuItems={options.menuItems}
-      onClick={options.onClick}
-      sshAction={options.sshAction}
-      sshLabel={options.sshLabel}
-      units={options.units}>
-      {options.children}
-    </Machine>
-  );
+  const renderComponent = (options = {}) =>
+    enzyme.shallow(
+      <Machine
+        classes={options.classes}
+        hardware={options.hardware}
+        isContainer={options.isContainer}
+        machine={options.machine || machine}
+        menuItems={options.menuItems}
+        onClick={options.onClick}
+        sshAction={options.sshAction}
+        sshLabel={options.sshLabel}
+        units={options.units}
+      >
+        {options.children}
+      </Machine>
+    );
 
   beforeEach(() => {
     machine = {
@@ -32,27 +34,34 @@ describe('Machine', () => {
       series: 'spotty',
       status: 'chillaxing'
     };
-    units = [{
-      icon: 'smalldata.svg',
-      id: 'new0/0',
-      name: 'new0/0',
-      status: 'upper-middle'
-    }];
+    units = [
+      {
+        icon: 'smalldata.svg',
+        id: 'new0/0',
+        name: 'new0/0',
+        status: 'upper-middle'
+      }
+    ];
   });
 
   it('can render for a machine', () => {
     const wrapper = renderComponent({
-      hardware: [{
-        label: 'disk',
-        value: 'floppy'
-      }, {
-        label: 'memory',
-        value: 'goldfish-like'
-      }],
-      menuItems: [{
-        label: 'Delete',
-        action: sinon.stub()
-      }],
+      hardware: [
+        {
+          label: 'disk',
+          value: 'floppy'
+        },
+        {
+          label: 'memory',
+          value: 'goldfish-like'
+        }
+      ],
+      menuItems: [
+        {
+          label: 'Delete',
+          action: sinon.stub()
+        }
+      ],
       units
     });
     expect(wrapper).toMatchSnapshot();
@@ -64,10 +73,12 @@ describe('Machine', () => {
       units
     });
     assert.equal(wrapper.prop('className').includes('machine--container'), true);
-    assert.deepEqual(wrapper.find('MachineUnit').prop('menuItems'), [{
-      label: 'Destroy',
-      action: wrapper.find('MachineUnit').prop('menuItems')[0].action
-    }]);
+    assert.deepEqual(wrapper.find('MachineUnit').prop('menuItems'), [
+      {
+        label: 'Destroy',
+        action: wrapper.find('MachineUnit').prop('menuItems')[0].action
+      }
+    ]);
   });
 
   it('can render without hardware', () => {
@@ -108,7 +119,7 @@ describe('Machine', () => {
 
   it('can display children', () => {
     const wrapper = renderComponent({
-      children: (<span className="kids">content</span>)
+      children: <span className="kids">content</span>
     });
     assert.equal(wrapper.find('.kids').length, 1);
   });

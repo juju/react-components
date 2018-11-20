@@ -6,10 +6,8 @@ const {storiesOf} = require('@storybook/react');
 
 const DropdownMenu = require('./dropdown-menu');
 
-storiesOf('DropdownMenu', module)
-  .addWithJSX('basic display', () => (
-    <DropdownMenu
-      handleClickOutside={() => {}}>
-      <li>child</li>
-    </DropdownMenu>
-  ));
+storiesOf('DropdownMenu', module).addWithJSX('basic display', () => (
+  <DropdownMenu handleClickOutside={() => {}}>
+    <li>child</li>
+  </DropdownMenu>
+));

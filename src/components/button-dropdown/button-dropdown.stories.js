@@ -6,24 +6,29 @@ const {storiesOf} = require('@storybook/react');
 
 const ButtonDropdown = require('./button-dropdown');
 
-storiesOf('ButtonDropdown', module)
-  .addWithJSX('basic display', () => (
-    <ButtonDropdown
-      activeItem="i4"
-      classes={['extra-classes']}
-      disableDropdown={false}
-      icon={'icon_16'}
-      listItems={[{
+storiesOf('ButtonDropdown', module).addWithJSX('basic display', () => (
+  <ButtonDropdown
+    activeItem="i4"
+    classes={['extra-classes']}
+    disableDropdown={false}
+    icon={'icon_16'}
+    listItems={[
+      {
         action: () => {},
         label: 'item1'
-      }, {
+      },
+      {
         label: 'item2'
-      }, {
-        element: (<span>item3</span>)
-      }, {
+      },
+      {
+        element: <span>item3</span>
+      },
+      {
         action: () => {},
         id: 'i4',
         label: 'item4'
-      }]}
-      tooltip="more" />
-  ));
+      }
+    ]}
+    tooltip="more"
+  />
+));

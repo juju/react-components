@@ -11,14 +11,8 @@ require('./_label.scss');
 
 const StatusLabel = props => {
   const status = props.status;
-  const classes = classNames(
-    'status-label',
-    getStatusClass('status-label--', status));
-  return (
-    <span className={classes}>
-      {status}
-    </span>
-  );
+  const classes = classNames('status-label', getStatusClass('status-label--', status));
+  return <span className={classes}>{status}</span>;
 };
 
 StatusLabel.propTypes = {

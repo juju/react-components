@@ -8,13 +8,9 @@ const {urls} = require('jaaslib');
 const maracaPropTypes = require('@canonical/maraca').propTypes;
 const StatusLabel = require('../label/label');
 const StatusTable = require('../table/table');
-const {
-  getStatusClass,
-  normaliseStatus
-} = require('../../../utils/utils');
+const {getStatusClass, normaliseStatus} = require('../../../utils/utils');
 
 class StatusApplicationList extends React.Component {
-
   /**
     Generate the machine id.
     @param {String} charmURL - A charm URL.
@@ -29,15 +25,17 @@ class StatusApplicationList extends React.Component {
     charm.revision = null;
     const charmPath = charm.path();
     if (!generateCharmURL || !onCharmClick) {
-      return (<span>{charmPath}</span>);
+      return <span>{charmPath}</span>;
     }
     return (
       <a
         className="status-view__link"
         href={generateCharmURL ? generateCharmURL(charmId) : null}
-        onClick={onCharmClick ? onCharmClick.bind(this, charmId) : null}>
+        onClick={onCharmClick ? onCharmClick.bind(this, charmId) : null}
+      >
         {charmPath}
-      </a>);
+      </a>
+    );
   }
 
   /**
@@ -55,39 +53,51 @@ class StatusApplicationList extends React.Component {
       const charm = urls.URL.fromLegacyString(app.charmURL);
       const store = charm.schema === 'cs' ? 'jujucharms' : 'local';
       const revision = charm.revision;
-      const units = Object.keys(this.props.units).filter(key =>
-        this.props.units[key].application === app.name);
+      const units = Object.keys(this.props.units).filter(
+        key => this.props.units[key].application === app.name
+      );
       accumulator.push({
         classes: [getStatusClass('status-table__row--', (app.status || {}).current)],
         onClick: generateApplicationOnClick ? generateApplicationOnClick(app.name) : null,
         clickURL: generateApplicationURL ? generateApplicationURL(app.name) : null,
-        columns: [{
-          columnSize: 2,
-          content: (
-            <span>
-              <img className="status-view__icon" src={this.props.getIconPath(app)} />
-              {app.name}
-            </span>)
-        }, {
-          columnSize: 2,
-          content: app.workloadVersion
-        }, {
-          columnSize: 2,
-          content: app.status && app.status.current ? (
-            <StatusLabel status={(app.status || {}).current} />) : null
-        }, {
-          columnSize: 1,
-          content: units.length
-        }, {
-          columnSize: 2,
-          content: this._generateCharm(app.charmURL)
-        }, {
-          columnSize: 2,
-          content: store
-        }, {
-          columnSize: 1,
-          content: revision
-        }],
+        columns: [
+          {
+            columnSize: 2,
+            content: (
+              <span>
+                <img className="status-view__icon" src={this.props.getIconPath(app)} />
+                {app.name}
+              </span>
+            )
+          },
+          {
+            columnSize: 2,
+            content: app.workloadVersion
+          },
+          {
+            columnSize: 2,
+            content:
+              app.status && app.status.current ? (
+                <StatusLabel status={(app.status || {}).current} />
+              ) : null
+          },
+          {
+            columnSize: 1,
+            content: units.length
+          },
+          {
+            columnSize: 2,
+            content: this._generateCharm(app.charmURL)
+          },
+          {
+            columnSize: 2,
+            content: store
+          },
+          {
+            columnSize: 1,
+            content: revision
+          }
+        ],
         extraData: normaliseStatus((app.status || {}).current),
         key: app.name
       });
@@ -96,36 +106,45 @@ class StatusApplicationList extends React.Component {
   }
 
   render() {
-    const headers = [{
-      content: 'Application',
-      columnSize: 2
-    }, {
-      content: 'Version',
-      columnSize: 2
-    }, {
-      content: 'Status',
-      columnSize: 2
-    }, {
-      content: 'Scale',
-      columnSize: 1
-    }, {
-      content: 'Charm',
-      columnSize: 2
-    }, {
-      content: 'Store',
-      columnSize: 2
-    }, {
-      content: 'Rev',
-      columnSize: 1
-    }];
+    const headers = [
+      {
+        content: 'Application',
+        columnSize: 2
+      },
+      {
+        content: 'Version',
+        columnSize: 2
+      },
+      {
+        content: 'Status',
+        columnSize: 2
+      },
+      {
+        content: 'Scale',
+        columnSize: 1
+      },
+      {
+        content: 'Charm',
+        columnSize: 2
+      },
+      {
+        content: 'Store',
+        columnSize: 2
+      },
+      {
+        content: 'Rev',
+        columnSize: 1
+      }
+    ];
     return (
       <StatusTable
         headers={headers}
         rows={this._generateRows()}
-        statusFilter={this.props.statusFilter} />
+        statusFilter={this.props.statusFilter}
+      />
     );
   }
-};
+}
 
 StatusApplicationList.propTypes = {
   applications: maracaPropTypes.applications,

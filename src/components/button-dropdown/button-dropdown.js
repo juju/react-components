@@ -62,14 +62,10 @@ class ButtonDropdown extends React.Component {
     @returns {String} The collection of class names.
   */
   _generateItemClasses(item) {
-    return classNames(
-      'dropdown-menu__list-item',
-      {
-        'dropdown-menu__list-item--active':
-          item.id && this.props.activeItem === item.id,
-        'dropdown-menu__list-item--inactive': !item.action && !item.element
-      }
-    );
+    return classNames('dropdown-menu__list-item', {
+      'dropdown-menu__list-item--active': item.id && this.props.activeItem === item.id,
+      'dropdown-menu__list-item--inactive': !item.action && !item.element
+    });
   }
 
   /**
@@ -86,20 +82,24 @@ class ButtonDropdown extends React.Component {
           <a
             className="dropdown-menu__list-item-link"
             onClick={this._handleItemClick.bind(this, item.action)}
-            role="button">
+            role="button"
+          >
             {item.label}
-          </a>);
+          </a>
+        );
       } else {
         content = item.label;
       }
       return (
         <li
           className={this._generateItemClasses(item)}
-          key={item.id || item.label || ('item-' + i)}
+          key={item.id || item.label || 'item-' + i}
           role="menuitem"
-          tabIndex="0">
+          tabIndex="0"
+        >
           {content}
-        </li>);
+        </li>
+      );
     });
   }
 
@@ -113,10 +113,10 @@ class ButtonDropdown extends React.Component {
       return null;
     }
     return (
-      <DropdownMenu
-        handleClickOutside={this._handleDropdownClickOutside.bind(this)}>
+      <DropdownMenu handleClickOutside={this._handleDropdownClickOutside.bind(this)}>
         {this._generateItems()}
-      </DropdownMenu>);
+      </DropdownMenu>
+    );
   }
 
   /**
@@ -126,11 +126,7 @@ class ButtonDropdown extends React.Component {
   _generateIcon() {
     const icon = this.props.icon;
     if (typeof icon === 'string') {
-      return (
-        <SvgIcon
-          className="button-dropdown__icon"
-          name={icon}
-          size="16" />);
+      return <SvgIcon className="button-dropdown__icon" name={icon} size="16" />;
     }
     return icon;
   }
@@ -144,9 +140,7 @@ class ButtonDropdown extends React.Component {
     if (tooltip) {
       return (
         <span className="tooltip__tooltip--below">
-          <span className="tooltip__inner tooltip__inner--up">
-            {tooltip}
-          </span>
+          <span className="tooltip__inner tooltip__inner--up">{tooltip}</span>
         </span>
       );
     }
@@ -160,18 +154,14 @@ class ButtonDropdown extends React.Component {
    @returns {String} The classes to add to the element.
   */
   _getClassNames() {
-    return classNames(
-      'button-dropdown__button', {
-        'button-dropdown__show-menu': this.state.showDropdown,
-        'button-dropdown__button-with-text': this.props.disableDropdown
-      });
+    return classNames('button-dropdown__button', {
+      'button-dropdown__show-menu': this.state.showDropdown,
+      'button-dropdown__button-with-text': this.props.disableDropdown
+    });
   }
 
   render() {
-    const classes = classNames(
-      'button-dropdown',
-      this.props.classes
-    );
+    const classes = classNames('button-dropdown', this.props.classes);
     return (
       <div className={classes}>
         <span
@@ -182,32 +172,33 @@ class ButtonDropdown extends React.Component {
           className={this._getClassNames()}
           onClick={this._toggleDropdown.bind(this)}
           role="button"
-          tabIndex="0">
+          tabIndex="0"
+        >
           {this._generateIcon()}
           {this._generateTooltip()}
         </span>
         {this._generateDropdownMenu()}
-      </div>);
+      </div>
+    );
   }
-};
+}
 
 ButtonDropdown.propTypes = {
   activeItem: PropTypes.string,
   classes: PropTypes.array,
   disableDropdown: PropTypes.bool,
-  icon: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.object
-  ]),
+  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   // The listItems prop isn't required because this component is also used to
   // display just the 'login' link. At which point the drop down is disabled
   // and there are no list items.
-  listItems: PropTypes.arrayOf(shapeup.shape({
-    action: PropTypes.func,
-    element: PropTypes.object,
-    id: PropTypes.string,
-    label: PropTypes.string
-  })),
+  listItems: PropTypes.arrayOf(
+    shapeup.shape({
+      action: PropTypes.func,
+      element: PropTypes.object,
+      id: PropTypes.string,
+      label: PropTypes.string
+    })
+  ),
   tooltip: PropTypes.string
 };
 

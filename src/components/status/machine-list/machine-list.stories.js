@@ -25,9 +25,7 @@ const machines = {
     },
     life: 'alive',
     series: 'xenial',
-    supportedContainers: [
-      'lxd'
-    ],
+    supportedContainers: ['lxd'],
     supportedContainersKnown: true,
     hardwareCharacteristics: {
       arch: 'amd64',
@@ -37,23 +35,23 @@ const machines = {
       'cpu-power': 350,
       'availability-zone': 'ap-southeast-2a'
     },
-    jobs: [
-      'JobHostUnits'
+    jobs: ['JobHostUnits'],
+    addresses: [
+      {
+        value: '13.210.238.155',
+        type: 'ipv4',
+        scope: 'public'
+      }
     ],
-    addresses: [{
-      value: '13.210.238.155',
-      type: 'ipv4',
-      scope: 'public'
-    }],
     hasVote: false,
     wantsVote: false
   }
 };
 
-storiesOf('StatusMachineList', module)
-  .addWithJSX('basic display', () => (
-    <StatusMachineList
-      generateMachineOnClick={() => {}}
-      generateMachineURL={() => {}}
-      machines={machines} />
-  ));
+storiesOf('StatusMachineList', module).addWithJSX('basic display', () => (
+  <StatusMachineList
+    generateMachineOnClick={() => {}}
+    generateMachineURL={() => {}}
+    machines={machines}
+  />
+));
