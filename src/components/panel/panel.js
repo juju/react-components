@@ -19,8 +19,6 @@ class Panel extends React.Component {
   /**
     Returns the supplied classes with the 'active' class applied if the
     component is the one which is active.
-
-    @method _generateClasses
     @param {String} section The section you want to check if it needs to be
       active.
     @returns {String} The collection of class names.
@@ -38,8 +36,6 @@ class Panel extends React.Component {
 
   /**
     Call a click action if it exists.
-
-    @method _handleClick
   */
   _handleClick() {
     var clickAction = this.props.clickAction;
@@ -50,8 +46,6 @@ class Panel extends React.Component {
 
   /**
     Don't bubble the click event to the parent.
-
-    @method _stopBubble
     @param {Object} The click event.
   */
   _stopBubble(e) {

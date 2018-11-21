@@ -12,7 +12,6 @@ require('./_button-row.scss');
 class ButtonRow extends React.Component {
   /**
     Returns the classes for the footer based on the provided props.
-    @method _generateClasses
     @returns {String} The collection of class names.
   */
   _generateClasses() {
@@ -25,7 +24,6 @@ class ButtonRow extends React.Component {
 
   /**
     Creates the buttons based on the provided props.
-    @method _generateButtons
     @param {Array} buttons The properties of the buttons to generate.
     @returns {Array} Collection of buttons.
   */

@@ -33,8 +33,6 @@ class SvgIcon extends React.PureComponent {
 
   /**
     Generates the classes for the icon based on the supplied props.
-
-    @method _generateClasses
     @returns {String} The collection of class names.
   */
   _generateClasses() {
@@ -44,8 +42,6 @@ class SvgIcon extends React.PureComponent {
 
   /**
     Generates the styles for the icon based on the supplied props.
-
-    @method _generateStyles
     @returns {Object} The object of styles.
   */
   _generateStyles() {
@@ -57,8 +53,6 @@ class SvgIcon extends React.PureComponent {
 
   /**
     Generates the viewbox for the icon based on the supplied props.
-
-    @method _generateViewbox
     @returns {String} The viewbox.
   */
   _generateViewbox() {
