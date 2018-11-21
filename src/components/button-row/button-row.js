@@ -45,6 +45,24 @@ class ButtonRow extends React.Component {
     return components;
   }
 
+  /**
+  Creates the inline list based on the provided props.
+  @param {Array} components The properties of the Button components to generate.
+  @returns {Array} Collection of inline list items.
+  */
+  _generateButtonsList(components) {
+    var listItems = [];
+    components.forEach((component, index) => {
+      listItems.push(
+        // Using component.title as a key here as it should always be unique in a row of buttons
+        <li className="p-inline-list__item" key={index}>
+          {component}
+        </li>
+      );
+    });
+    return listItems;
+  }
+
   render() {
     var buttons = this._generateButtons(this.props.buttons);
     return <div className={this._generateClasses()}>{buttons}</div>;
