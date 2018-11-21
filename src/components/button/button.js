@@ -10,7 +10,6 @@ require('./_button.scss');
 class Button extends React.Component {
   /**
     Returns the classes for the button based on the provided props.
-    @method _generateClasses
     @returns {String} The collection of class names.
   */
   _generateClasses() {
@@ -25,8 +24,6 @@ class Button extends React.Component {
 
   /**
     Call the action if not disabled.
-
-    @method _handleClick
     @param {Object} e The click event.
   */
   _handleClick(e) {

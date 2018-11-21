@@ -35,7 +35,6 @@ class BasicTableRow extends React.Component {
 
   /**
     Show the entity details when clicked.
-    @method _handleRowClick
     @param onClick {Function} The function to call when a row is clicked.
     @param evt {Object} The click event.
   */

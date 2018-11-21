@@ -19,11 +19,6 @@ class ExpandingRow extends React.Component {
     };
   }
 
-  /**
-    Called once the component has initially mounted.
-
-    @method componentDidMount
-  */
   componentDidMount() {
     // If the component should initially be shown as expanded then animate it
     // open.
@@ -51,8 +46,6 @@ class ExpandingRow extends React.Component {
 
   /**
     Generate the base class names for the component.
-
-    @method _generateClasses
     @returns {Object} The collection of class names.
   */
   _generateClasses() {
@@ -64,8 +57,6 @@ class ExpandingRow extends React.Component {
 
   /**
     Toggle between the expanded and closed states.
-
-    @method _toggle
   */
   _toggle() {
     this.setState({expanded: !this.state.expanded}, () => {
@@ -74,9 +65,7 @@ class ExpandingRow extends React.Component {
   }
 
   /**
-    Resize the
-
-    @method _resize
+    Resize the row
   */
   _resize() {
     const expanded = this.state.expanded;
