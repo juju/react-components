@@ -22,22 +22,4 @@ describe('ButtonRow', function() {
     const wrapper = renderComponent({buttons});
     expect(wrapper).toMatchSnapshot();
   });
-
-  it('sets a class when generating multiple buttons', function() {
-    var callbackStub = sinon.stub();
-    var buttons = [
-      {
-        title: 'My button',
-        type: 'submit',
-        action: callbackStub
-      },
-      {
-        title: 'Another button',
-        type: 'submit',
-        action: callbackStub
-      }
-    ];
-    const wrapper = renderComponent({buttons});
-    expect(wrapper).toMatchSnapshot();
-  });
 });

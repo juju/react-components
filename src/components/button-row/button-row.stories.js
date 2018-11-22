@@ -18,7 +18,7 @@ storiesOf('ButtonRow', module)
       ]}
     />
   ))
-  .addWithJSX('with multipe buttons', () => (
+  .addWithJSX('with multiple buttons', () => (
     <ButtonRow
       buttons={[
         {
