@@ -12,7 +12,7 @@ const ButtonRow = props => {
   const buttonsArr = props.buttons;
   const buttonListItems = buttonsArr.map((button, index) => (
     <li className="p-inline-list__item" key={index}>
-      <Button formaction={button.formaction} type={button.type}>
+      <Button formAction={button.formAction} type={button.type}>
         {button.title}
       </Button>
     </li>

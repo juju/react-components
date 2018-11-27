@@ -13,7 +13,7 @@ storiesOf('ButtonRow', module)
         {
           title: 'My button',
           type: 'submit',
-          formaction: () => {}
+          formAction: () => {}
         }
       ]}
     />
@@ -24,12 +24,12 @@ storiesOf('ButtonRow', module)
         {
           title: 'My button',
           type: 'submit',
-          formaction: () => {}
+          formAction: () => {}
         },
         {
           title: 'Another button',
           type: 'submit',
-          formaction: () => {}
+          formAction: () => {}
         }
       ]}
     />
