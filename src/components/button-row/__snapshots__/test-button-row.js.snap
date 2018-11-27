@@ -12,17 +12,40 @@ exports[`ButtonRow generates a button 1`] = `
       key="0"
     >
       <Button
-        buttons={
-          Array [
-            Object {
-              "action": [Function],
-              "title": "My button",
-              "type": "submit",
-            },
-          ]
-        }
+        type="submit"
       >
         My button
+      </Button>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`ButtonRow generates more than one button 1`] = `
+<div
+  className="button-row"
+>
+  <ul
+    className="p-inline-list"
+  >
+    <li
+      className="p-inline-list__item"
+      key="0"
+    >
+      <Button
+        type="submit"
+      >
+        My first button
+      </Button>
+    </li>
+    <li
+      className="p-inline-list__item"
+      key="1"
+    >
+      <Button
+        type="submit"
+      >
+        My second button
       </Button>
     </li>
   </ul>

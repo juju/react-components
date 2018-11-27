@@ -22,4 +22,22 @@ describe('ButtonRow', function() {
     const wrapper = renderComponent({buttons});
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('generates more than one button', function() {
+    var callbackStub = sinon.stub();
+    var buttons = [
+      {
+        title: 'My first button',
+        type: 'submit',
+        action: callbackStub
+      },
+      {
+        title: 'My second button',
+        type: 'submit',
+        action: callbackStub
+      }
+    ];
+    const wrapper = renderComponent({buttons});
+    expect(wrapper).toMatchSnapshot();
+  });
 });
