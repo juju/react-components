@@ -9,15 +9,13 @@ const Button = require('../button/button');
 require('./_button-row.scss');
 
 const ButtonRow = props => {
-  const buttonListItems = [];
   const buttonsArr = props.buttons;
-  buttonsArr.forEach((button, index) => {
-    buttonListItems.push(
-      <li className="p-inline-list__item" key={index}>
-        <Button {...props}>{button.title}</Button>
-      </li>
-    );
-  });
+  const buttonListItems = buttonsArr.map((button, index) => (
+    <li className="p-inline-list__item" key={index}>
+      <Button {...props}>{button.title}</Button>
+    </li>
+  ));
+
   return (
     <div className="button-row">
       <ul className="p-inline-list">{buttonListItems}</ul>
