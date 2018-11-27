@@ -9,8 +9,7 @@ const Button = require('../button/button');
 require('./_button-row.scss');
 
 const ButtonRow = props => {
-  const buttonsArr = props.buttons;
-  const buttonListItems = buttonsArr.map((button, index) => (
+  const buttonListItems = props.buttons.map((button, index) => (
     <li className="p-inline-list__item" key={index}>
       <Button formAction={button.formAction} type={button.type}>
         {button.title}
