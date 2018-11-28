@@ -12,6 +12,7 @@ exports[`ButtonRow generates a button 1`] = `
       key="0"
     >
       <Button
+        action={[Function]}
         type="submit"
       >
         My button
@@ -33,6 +34,7 @@ exports[`ButtonRow generates more than one button 1`] = `
       key="0"
     >
       <Button
+        action={[Function]}
         type="submit"
       >
         My first button
@@ -43,6 +45,7 @@ exports[`ButtonRow generates more than one button 1`] = `
       key="1"
     >
       <Button
+        action={[Function]}
         type="submit"
       >
         My second button
