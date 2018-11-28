@@ -25,7 +25,13 @@ const ButtonRow = props => {
 };
 
 ButtonRow.propTypes = {
-  buttons: PropTypes.array.isRequired
+  buttons: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      type: PropTypes.string,
+      action: PropTypes.func
+    })
+  )
 };
 
 module.exports = ButtonRow;
