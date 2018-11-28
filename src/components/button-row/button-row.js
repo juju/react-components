@@ -12,10 +12,9 @@ const ButtonRow = props => {
   const buttonListItems = props.buttons.map((button, index) => (
     <li className="p-inline-list__item" key={index}>
       <Button
+        modifier={button.modifier}
         action={button.action}
         disabled={button.disabled}
-        extraClasses={button.extraClasses}
-        submit={button.submit}
         tooltip={button.tooltip}
         type={button.type}
       >

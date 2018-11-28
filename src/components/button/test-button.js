@@ -88,24 +88,17 @@ describe('Button', function() {
     assert.equal(wrapper.text(), 'Hello, world.');
   });
 
-  it('sets the type class', function() {
+  it('sets the type attribute', function() {
     const wrapper = renderComponent({
-      type: 'neutral'
+      type: 'reset'
     });
-    assert.equal(wrapper.prop('className'), 'button--neutral');
+    assert.equal(wrapper.prop('type'), 'reset');
   });
 
-  it('sets the disabled class if disabled', function() {
+  it('sets the disabled attribute if disabled', function() {
     const wrapper = renderComponent({
       disabled: true
     });
-    assert.equal(wrapper.prop('className').includes('button--disabled'), true);
-  });
-
-  it('sets the extra classes if provided', function() {
-    const wrapper = renderComponent({
-      extraClasses: 'button--large'
-    });
-    assert.equal(wrapper.prop('className').includes('button--large'), true);
+    expect(wrapper.prop('disabled')).toEqual(true);
   });
 });

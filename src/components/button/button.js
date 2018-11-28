@@ -1,27 +1,13 @@
-/* Copyright (C) 2017 Canonical Ltd. */
+/* Copyright (C) 2018 Canonical Ltd. */
 'use strict';
 
-const classNames = require('classnames');
 const PropTypes = require('prop-types');
 const React = require('react');
+const classnames = require('classnames');
 
 require('./_button.scss');
 
 class Button extends React.Component {
-  /**
-    Returns the classes for the button based on the provided props.
-    @returns {String} The collection of class names.
-  */
-  _generateClasses() {
-    return classNames(
-      this.props.type ? 'button--' + this.props.type : 'button--neutral',
-      {
-        'button--disabled': this.props.disabled
-      },
-      this.props.extraClasses
-    );
-  }
-
   /**
     Call the action if not disabled.
     @param {Object} e The click event.
@@ -40,14 +26,24 @@ class Button extends React.Component {
   }
 
   render() {
+    const classes = classnames(
+      this.props.modifier ? `p-button--${this.props.modifier}` : `p-button`,
+      this.props.tooltip ? `p-tooltip p-tooltip--${this.props.tooltip.position}` : ``
+    );
     return (
       <button
-        className={this._generateClasses()}
+        className={classes}
+        disabled={this.props.disabled}
         onClick={this._handleClick.bind(this)}
         title={this.props.tooltip}
-        type={this.props.submit ? 'submit' : 'button'}
+        type={this.props.type ? this.props.type : 'button'}
       >
         {this.props.children}
+        {this.props.tooltip && (
+          <span class="p-tooltip__message" id={this.props.tooltip.position} role="tooltip">
+            {this.props.tooltip.msg}
+          </span>
+        )}
       </button>
     );
   }
@@ -58,8 +54,12 @@ Button.propTypes = {
   children: PropTypes.node,
   disabled: PropTypes.bool,
   extraClasses: PropTypes.string,
+  modifier: PropTypes.string,
   submit: PropTypes.bool,
-  tooltip: PropTypes.string,
+  tooltip: PropTypes.shape({
+    msg: PropTypes.string,
+    position: PropTypes.string
+  }),
   type: PropTypes.string
 };
 
