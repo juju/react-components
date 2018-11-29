@@ -35,8 +35,7 @@ ButtonRow.propTypes = {
   buttons: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
-      type: PropTypes.string,
-      action: PropTypes.func
+      ...Button.propTypes
     })
   )
 };
