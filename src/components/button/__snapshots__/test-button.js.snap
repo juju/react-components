@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button matches the snapshot 1`] = `
+<button
+  className="p-button"
+  onClick={[Function]}
+  type="button"
+/>
+`;

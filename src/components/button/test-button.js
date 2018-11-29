@@ -30,6 +30,11 @@ describe('Button', function() {
     };
   });
 
+  it('matches the snapshot', function() {
+    const wrapper = renderComponent();
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('calls the callable provided when clicked', function() {
     var callbackStub = sinon.stub();
     const wrapper = renderComponent({
