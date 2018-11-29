@@ -11,7 +11,14 @@ require('./_button-row.scss');
 const ButtonRow = props => {
   const buttonListItems = props.buttons.map((button, index) => (
     <li className="p-inline-list__item" key={index}>
-      <Button action={button.action} type={button.type}>
+      <Button
+        action={button.action}
+        disabled={button.disabled}
+        extraClasses={button.extraClasses}
+        submit={button.submit}
+        tooltip={button.tooltip}
+        type={button.type}
+      >
         {button.title}
       </Button>
     </li>
