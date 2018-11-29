@@ -53,7 +53,6 @@ Button.propTypes = {
   action: PropTypes.func,
   children: PropTypes.node,
   disabled: PropTypes.bool,
-  extraClasses: PropTypes.string,
   modifier: PropTypes.string,
   submit: PropTypes.bool,
   tooltip: PropTypes.shape({
