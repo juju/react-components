@@ -2,35 +2,55 @@
 
 exports[`ButtonRow generates a button 1`] = `
 <div
-  className="button-row button-row--multiple button-row--count-1"
+  className="button-row"
 >
-  <Button
-    action={[Function]}
-    key="My button"
-    type="submit"
+  <ul
+    className="p-inline-list"
   >
-    My button
-  </Button>
+    <li
+      className="p-inline-list__item"
+      key="0"
+    >
+      <Button
+        action={[Function]}
+        type="submit"
+      >
+        My button
+      </Button>
+    </li>
+  </ul>
 </div>
 `;
 
-exports[`ButtonRow sets a class when generating multiple buttons 1`] = `
+exports[`ButtonRow generates more than one button 1`] = `
 <div
-  className="button-row button-row--multiple button-row--count-2"
+  className="button-row"
 >
-  <Button
-    action={[Function]}
-    key="My button"
-    type="submit"
+  <ul
+    className="p-inline-list"
   >
-    My button
-  </Button>
-  <Button
-    action={[Function]}
-    key="Another button"
-    type="submit"
-  >
-    Another button
-  </Button>
+    <li
+      className="p-inline-list__item"
+      key="0"
+    >
+      <Button
+        action={[Function]}
+        type="submit"
+      >
+        My first button
+      </Button>
+    </li>
+    <li
+      className="p-inline-list__item"
+      key="1"
+    >
+      <Button
+        action={[Function]}
+        type="submit"
+      >
+        My second button
+      </Button>
+    </li>
+  </ul>
 </div>
 `;
