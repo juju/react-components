@@ -1,4 +1,4 @@
-/* Copyright (C) 2017 Canonical Ltd. */
+/* Copyright (C) 2018 Canonical Ltd. */
 'use strict';
 
 const React = require('react');
@@ -15,7 +15,7 @@ describe('Button', function() {
         action={options.action}
         disabled={options.disabled}
         extraClasses={options.extraClasses}
-        submit={options.submit}
+        modifier={options.modifier}
         tooltip={options.tooltip}
         type={options.type}
       >
@@ -30,8 +30,40 @@ describe('Button', function() {
     };
   });
 
-  it('matches the snapshot', function() {
+  it('default matches the snapshot', function() {
     const wrapper = renderComponent();
+    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find('.p-button').length).toEqual(1);
+  });
+
+  it('neutral matches the snapshot', function() {
+    const wrapper = renderComponent({
+      modifier: 'neutral'
+    });
+    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find('.p-button--neutral').length).toEqual(1);
+  });
+
+  it('positive matches the snapshot', function() {
+    const wrapper = renderComponent({
+      modifier: 'positive'
+    });
+    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find('.p-button--positive').length).toEqual(1);
+  });
+
+  it('negative matches the snapshot', function() {
+    const wrapper = renderComponent({
+      modifier: 'negative'
+    });
+    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find('.p-button--negative').length).toEqual(1);
+  });
+
+  it('with custom type matches snapshot', function() {
+    const wrapper = renderComponent({
+      type: 'submit'
+    });
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -57,7 +89,7 @@ describe('Button', function() {
   it('does not submit when disabled', function() {
     const wrapper = renderComponent({
       disabled: true,
-      submit: true
+      type: 'submit'
     });
     wrapper.simulate('click', evt);
     assert.equal(evt.preventDefault.callCount, 1);
@@ -70,7 +102,7 @@ describe('Button', function() {
     wrapper.simulate('click', evt);
   });
 
-  it('stop the event propogating when clicked', function() {
+  it('stop the event propagating when clicked', function() {
     var callbackStub = sinon.stub();
     const wrapper = renderComponent({
       action: callbackStub
@@ -81,9 +113,10 @@ describe('Button', function() {
 
   it('displays the provided title and tooltip', function() {
     const wrapper = renderComponent({
-      tooltip: 'My tooltip'
+      tooltip: {msg: 'my tooltip', position: 'btm-rgt'}
     });
-    assert.equal(wrapper.prop('title'), 'My tooltip');
+    expect(wrapper.find('.p-tooltip__message').length).toEqual(1);
+    expect(wrapper.find('#btm-rgt').length).toEqual(1);
   });
 
   it('displays provided children', function() {
@@ -105,5 +138,13 @@ describe('Button', function() {
       disabled: true
     });
     expect(wrapper.prop('disabled')).toEqual(true);
+  });
+
+  it('applies extra classes if supplies', function() {
+    const wrapper = renderComponent({
+      extraClasses: 'foo bar'
+    });
+    expect(wrapper.hasClass('foo')).toEqual(true);
+    expect(wrapper.hasClass('bar')).toEqual(true);
   });
 });

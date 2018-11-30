@@ -20,7 +20,7 @@ class Button extends React.Component {
     if (!this.props.disabled && this.props.action) {
       this.props.action();
     }
-    if (this.props.disabled && this.props.submit) {
+    if (this.props.disabled && this.props.type == 'submit') {
       e.preventDefault();
     }
   }
@@ -36,12 +36,11 @@ class Button extends React.Component {
         className={classes}
         disabled={this.props.disabled}
         onClick={this._handleClick.bind(this)}
-        title={this.props.tooltip}
         type={this.props.type ? this.props.type : 'button'}
       >
         {this.props.children}
         {this.props.tooltip && (
-          <span class="p-tooltip__message" id={this.props.tooltip.position} role="tooltip">
+          <span className="p-tooltip__message" id={this.props.tooltip.position} role="tooltip">
             {this.props.tooltip.msg}
           </span>
         )}

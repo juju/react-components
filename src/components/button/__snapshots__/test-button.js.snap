@@ -1,9 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button matches the snapshot 1`] = `
+exports[`Button default matches the snapshot 1`] = `
 <button
   className="p-button"
   onClick={[Function]}
   type="button"
+/>
+`;
+
+exports[`Button negative matches the snapshot 1`] = `
+<button
+  className="p-button--negative"
+  onClick={[Function]}
+  type="button"
+/>
+`;
+
+exports[`Button neutral matches the snapshot 1`] = `
+<button
+  className="p-button--neutral"
+  onClick={[Function]}
+  type="button"
+/>
+`;
+
+exports[`Button positive matches the snapshot 1`] = `
+<button
+  className="p-button--positive"
+  onClick={[Function]}
+  type="button"
+/>
+`;
+
+exports[`Button with custom type matches snapshot 1`] = `
+<button
+  className="p-button"
+  onClick={[Function]}
+  type="submit"
 />
 `;
