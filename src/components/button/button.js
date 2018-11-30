@@ -28,7 +28,8 @@ class Button extends React.Component {
   render() {
     const classes = classnames(
       this.props.modifier ? `p-button--${this.props.modifier}` : `p-button`,
-      this.props.tooltip ? `p-tooltip p-tooltip--${this.props.tooltip.position}` : ``
+      this.props.tooltip ? `p-tooltip p-tooltip--${this.props.tooltip.position}` : ``,
+      this.props.extraClasses
     );
     return (
       <button
@@ -53,6 +54,7 @@ Button.propTypes = {
   action: PropTypes.func,
   children: PropTypes.node,
   disabled: PropTypes.bool,
+  extraClasses: PropTypes.string,
   modifier: PropTypes.string,
   submit: PropTypes.bool,
   tooltip: PropTypes.shape({
