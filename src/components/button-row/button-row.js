@@ -15,6 +15,7 @@ const ButtonRow = props => {
         modifier={button.modifier}
         action={button.action}
         disabled={button.disabled}
+        extraClasses={button.extraClasses}
         tooltip={button.tooltip}
         type={button.type}
       >
