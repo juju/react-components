@@ -55,7 +55,6 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   extraClasses: PropTypes.string,
   modifier: PropTypes.string,
-  submit: PropTypes.bool,
   tooltip: PropTypes.shape({
     msg: PropTypes.string,
     position: PropTypes.string
