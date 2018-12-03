@@ -65,6 +65,7 @@ describe('Button', function() {
       type: 'submit'
     });
     expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find('.p-button').length).toEqual(1);
   });
 
   it('calls the callable provided when clicked', function() {
