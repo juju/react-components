@@ -20,7 +20,7 @@ class Button extends React.Component {
     if (!this.props.disabled && this.props.action) {
       this.props.action();
     }
-    if (this.props.disabled && this.props.type == 'submit') {
+    if (this.props.disabled && this.props.type === 'submit') {
       e.preventDefault();
     }
   }
