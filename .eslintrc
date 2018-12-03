@@ -3,7 +3,7 @@ env:
   node: true
   es6: true
 parserOptions:
-  ecmaVersion: 2017
+  ecmaVersion: 2018
   ecmaFeatures:
     jsx: true
 plugins: ["react"]
