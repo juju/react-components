@@ -1,9 +1,9 @@
 /* Copyright (C) 2018 Canonical Ltd. */
 'use strict';
 
+const classnames = require('classnames');
 const PropTypes = require('prop-types');
 const React = require('react');
-const classnames = require('classnames');
 
 require('./_button.scss');
 
