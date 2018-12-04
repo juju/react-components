@@ -170,7 +170,7 @@ class Terminal extends React.Component {
     Throttles the window resize event so we only do it every 50ms.
   */
   _throttledResize() {
-    if (this.resizeTimeout == null) {
+    if (this.resizeTimeout === null) {
       this.resizeTimeout = setTimeout(() => {
         this.resizeTimeout = null;
         this.setSize(this.state.size);
