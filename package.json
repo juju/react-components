@@ -36,7 +36,6 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "chai": "^4.2.0",
-    "classnames": "^2.2.6",
     "css-loader": "^1.0.0",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
@@ -61,6 +60,7 @@
   },
   "dependencies": {
     "@canonical/maraca": "^0.1.2",
+    "classnames": "^2.2.6",
     "hoist-non-react-statics": "^3.0.1",
     "jaaslib": "^0.5.0",
     "vanilla-framework": "^1.8.0",
