@@ -64,7 +64,7 @@
     "hoist-non-react-statics": "^3.0.1",
     "jaaslib": "^0.5.0",
     "vanilla-framework": "^1.8.0",
-    "xterm": "^3.8.0",
+    "xterm": "^3.8.1",
     "xterm-webfont": "^1.1.1"
   },
   "peerDependencies": {
