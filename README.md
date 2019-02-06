@@ -1,21 +1,16 @@
 # Juju React Components
-
 React components for use with Juju.
 
 ## Component Examples
-
 The components can be viewed with Storybook. Just run `npm run storybook` and visit the supplied URL.
 
 ## Testing
-
 The tests can be run with `npm test`.
 
 ## Releases
-
 These are the steps to publish a new NPM release.
 
 ### QA
-
 - Run `npm run storybook` and make sure there are no errors and that each component displays correctly.
 - Consider testing in a project (e.g. Juju GUI) with `npm link ...`
 
