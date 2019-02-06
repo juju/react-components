@@ -8,19 +8,22 @@ const React = require('react');
 require('./_panel.scss');
 
 class Panel extends React.Component {
+  constructor(props) {
+    super(props);
+    this.contentRef = React.createRef();
+  }
+
   componentDidMount() {
     // Set the keyboard focus on the component so it can be scrolled with the
     // keyboard. Requires tabIndex to be set on the element.
     if (this.props.focus) {
-      this.refs.content.focus();
+      this.contentRef.current.focus();
     }
   }
 
   /**
     Returns the supplied classes with the 'active' class applied if the
     component is the one which is active.
-
-    @method _generateClasses
     @param {String} section The section you want to check if it needs to be
       active.
     @returns {String} The collection of class names.
@@ -38,8 +41,6 @@ class Panel extends React.Component {
 
   /**
     Call a click action if it exists.
-
-    @method _handleClick
   */
   _handleClick() {
     var clickAction = this.props.clickAction;
@@ -50,8 +51,6 @@ class Panel extends React.Component {
 
   /**
     Don't bubble the click event to the parent.
-
-    @method _stopBubble
     @param {Object} The click event.
   */
   _stopBubble(e) {
@@ -65,7 +64,7 @@ class Panel extends React.Component {
       <div
         className={this._genClasses()}
         onClick={this._handleClick.bind(this)}
-        ref="content"
+        ref={this.contentRef}
         tabIndex="0"
       >
         <div className="panel-component__inner" onClick={this._stopBubble.bind(this)}>

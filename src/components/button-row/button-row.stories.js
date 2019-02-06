@@ -11,25 +11,28 @@ storiesOf('ButtonRow', module)
     <ButtonRow
       buttons={[
         {
+          action: () => {},
+          modifier: 'positive',
           title: 'My button',
-          type: 'submit',
-          action: () => {}
+          type: 'submit'
         }
       ]}
     />
   ))
-  .addWithJSX('with multipe buttons', () => (
+  .addWithJSX('with multiple buttons', () => (
     <ButtonRow
       buttons={[
         {
-          title: 'My button',
-          type: 'submit',
-          action: () => {}
+          action: () => {},
+          modifier: 'negative',
+          title: 'My negative button',
+          type: 'reset'
         },
         {
-          title: 'Another button',
-          type: 'submit',
-          action: () => {}
+          action: () => {},
+          modifier: 'positive',
+          title: 'My positive button',
+          type: 'submit'
         }
       ]}
     />

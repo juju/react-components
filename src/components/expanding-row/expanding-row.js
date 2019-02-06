@@ -17,13 +17,9 @@ class ExpandingRow extends React.Component {
         opacity: 0
       }
     };
+    this.innerRef = React.createRef();
   }
 
-  /**
-    Called once the component has initially mounted.
-
-    @method componentDidMount
-  */
   componentDidMount() {
     // If the component should initially be shown as expanded then animate it
     // open.
@@ -35,7 +31,7 @@ class ExpandingRow extends React.Component {
     this.observer = new MutationObserver(mutations => {
       this._resize();
     });
-    this.observer.observe(this.refs.inner, {childList: true, subtree: true});
+    this.observer.observe(this.innerRef.current, {childList: true, subtree: true});
   }
 
   componentWillReceiveProps(nextProps, nextState) {
@@ -51,8 +47,6 @@ class ExpandingRow extends React.Component {
 
   /**
     Generate the base class names for the component.
-
-    @method _generateClasses
     @returns {Object} The collection of class names.
   */
   _generateClasses() {
@@ -64,8 +58,6 @@ class ExpandingRow extends React.Component {
 
   /**
     Toggle between the expanded and closed states.
-
-    @method _toggle
   */
   _toggle() {
     this.setState({expanded: !this.state.expanded}, () => {
@@ -74,15 +66,13 @@ class ExpandingRow extends React.Component {
   }
 
   /**
-    Resize the
-
-    @method _resize
+    Resize the row
   */
   _resize() {
     const expanded = this.state.expanded;
     this.setState({
       styles: {
-        height: expanded ? this.refs.inner.offsetHeight + 'px' : '0px',
+        height: expanded ? this.innerRef.current.offsetHeight + 'px' : '0px',
         opacity: expanded ? 1 : 0
       }
     });
@@ -99,7 +89,7 @@ class ExpandingRow extends React.Component {
           {this.props.children[0]}
         </div>
         <div className="expanding-row__expanded twelve-col" style={this.state.styles}>
-          <div className="twelve-col no-margin-bottom" ref="inner">
+          <div className="twelve-col no-margin-bottom" ref={this.innerRef}>
             {this.props.children[1]}
           </div>
         </div>

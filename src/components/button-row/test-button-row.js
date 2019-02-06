@@ -23,16 +23,16 @@ describe('ButtonRow', function() {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('sets a class when generating multiple buttons', function() {
+  it('generates more than one button', function() {
     var callbackStub = sinon.stub();
     var buttons = [
       {
-        title: 'My button',
+        title: 'My first button',
         type: 'submit',
         action: callbackStub
       },
       {
-        title: 'Another button',
+        title: 'My second button',
         type: 'submit',
         action: callbackStub
       }
