@@ -5,8 +5,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [0.5.0] - 2019-02-07
-### Added
--
 ### Changed
 - Updated xterm dependency to protect against a vulnerability.
 - Exposed some components that were missing in the index.
@@ -50,6 +48,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added Terminal component.
 ### Changed
 - Updated components to their latest versions from the Juju GUI.
+
 ## [0.1.0] - 2018-10-16
 ### Added
 - Added components originally built for the Juju GUI.
