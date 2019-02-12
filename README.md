@@ -2,10 +2,28 @@
 
 React components for use with Juju.
 
+## Component Docs
+
+### Generic Components
+
+- [BasicTable](./src/components/basic-table/)
+- [Button](./src/components/button/)
+- [ButtonDropdown](./src/components/button-dropdown/)
+- [ButtonRow](./src/components/button-row/)
+- [DropdownMenu](./src/components/dropdown-menu/)
+- [ExpandingRow](./src/components/expanding-row/)
+- [Panel](./src/components/panel/)
+- [SvgIcon](./src/components/svg-icon/)
+
+### Juju Specific Component
+
+- [Machine](./src/components/machine/)
+- [Status](./src/components/status/)
+- [Terminal](./src/components/terminal/)
+
 ## Component Examples
 
-The components can be viewed with React Styleguidist
-. Just run `npm run styleguidist` and visit the supplied URL.
+The components can be viewed with React Styleguidist. Just run `npm run styleguidist` and visit the supplied URL.
 
 ## Testing
 
@@ -17,7 +35,7 @@ These are the steps to publish a new NPM release.
 
 ### QA
 
-- Run `npm run storybook` and make sure there are no errors and that each component displays correctly.
+- Run `npm run styleguidist` and make sure there are no errors and that each component displays correctly.
 - Consider testing in a project (e.g. Juju GUI) with `npm link ...`
 
 ### Prepare for release
