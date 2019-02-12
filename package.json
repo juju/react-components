@@ -10,6 +10,7 @@
     "clean": "rm -rf lib node_modules",
     "lint": "eslint .",
     "prepublishOnly": "npm run build",
+    "styleguidist": "styleguidist server",
     "test": "jest"
   },
   "repository": {
@@ -27,12 +28,13 @@
   },
   "homepage": "https://github.com/juju/react-components#readme",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
     "babel-jest": "^23.6.0",
+    "babel-loader": "^8.0.5",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
     "chai": "^4.2.0",
     "css-loader": "^1.0.0",
     "enzyme": "^3.7.0",
@@ -50,10 +52,12 @@
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-styleguidist": "^8.0.6",
     "sass-loader": "^7.1.0",
     "shapeup": "^0.2.5",
     "sinon": "^7.0.0",
-    "style-loader": "^0.23.1"
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.3"
   },
   "dependencies": {
     "@canonical/maraca": "^0.1.2",
