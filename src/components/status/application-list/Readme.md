@@ -1,11 +1,10 @@
-/* Copyright (C) 2018 Canonical Ltd. */
-'use strict';
+## StatusApplicationList
 
-const React = require('react');
-const {storiesOf} = require('@storybook/react');
+A component for displaying the status of a list of Juju applications.
 
-const StatusApplicationList = require('./application-list');
+Example usage:
 
+```jsx
 const applications = {
   etcd: {
     modelUUID: '32c9c2db-0955-459a-8201-539657ef0da1',
@@ -69,15 +68,13 @@ const units = {
     }
   }
 };
-
-storiesOf('StatusApplicationList', module).addWithJSX('basic display', () => (
-  <StatusApplicationList
-    applications={applications}
-    generateApplicationOnClick={() => {}}
-    generateApplicationURL={() => {}}
-    generateCharmURL={() => {}}
-    getIconPath={() => {}}
-    onCharmClick={() => {}}
-    units={units}
-  />
-));
+<StatusApplicationList
+  applications={applications}
+  generateApplicationOnClick={() => {}}
+  generateApplicationURL={() => {}}
+  generateCharmURL={() => {}}
+  getIconPath={() => {}}
+  onCharmClick={() => {}}
+  units={units}
+/>;
+```

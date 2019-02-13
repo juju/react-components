@@ -1,11 +1,11 @@
-/* Copyright (C) 2018 Canonical Ltd. */
-'use strict';
+## BasicTable
 
-const React = require('react');
-const {storiesOf} = require('@storybook/react');
+The BasicTable component is a slightly misnamed table component to handle displaying
+tabular data but also handles sorting, filtering and more.
 
-const BasicTable = require('./basic-table');
+Example usage:
 
+```jsx
 const headers = [
   {
     content: 'Column 1',
@@ -58,7 +58,5 @@ const rows = [
     key: 'row-three-key'
   }
 ];
-
-storiesOf('BasicTable', module).addWithJSX('basic display', () => (
-  <BasicTable headers={headers} rows={rows} />
-));
+<BasicTable headers={headers} rows={rows} />;
+```
