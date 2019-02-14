@@ -1,11 +1,9 @@
 /* Copyright (C) 2017 Canonical Ltd. */
-'use strict';
 
-const classNames = require('classnames');
-const PropTypes = require('prop-types');
-const React = require('react');
-
-require('./_panel.scss');
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
+import './_panel.scss';
 
 class Panel extends React.Component {
   constructor(props) {
@@ -88,4 +86,4 @@ Panel.defaultProps = {
   focus: true
 };
 
-module.exports = Panel;
+export default Panel;

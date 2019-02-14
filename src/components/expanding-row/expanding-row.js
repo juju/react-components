@@ -1,11 +1,9 @@
 /* Copyright (C) 2017 Canonical Ltd. */
-'use strict';
 
-const classNames = require('classnames');
-const PropTypes = require('prop-types');
-const React = require('react');
-
-require('./_expanding-row.scss');
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
+import './_expanding-row.scss';
 
 class ExpandingRow extends React.Component {
   constructor() {
@@ -110,4 +108,4 @@ ExpandingRow.defaultProps = {
   clickable: true
 };
 
-module.exports = ExpandingRow;
+export default ExpandingRow;

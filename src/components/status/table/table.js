@@ -1,12 +1,10 @@
 /* Copyright (C) 2018 Canonical Ltd. */
-'use strict';
 
-const PropTypes = require('prop-types');
-const React = require('react');
+import PropTypes from 'prop-types';
+import React from 'react';
 
-const BasicTable = require('../../basic-table/basic-table');
-
-require('./_table.scss');
+import BasicTable from '../../basic-table/basic-table';
+import './_table.scss';
 
 class StatusTable extends React.Component {
   /**
@@ -60,4 +58,4 @@ StatusTable.propTypes = {
   statusFilter: PropTypes.string
 };
 
-module.exports = StatusTable;
+export default StatusTable;

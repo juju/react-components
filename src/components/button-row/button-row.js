@@ -1,12 +1,10 @@
 /* Copyright (C) 2018 Canonical Ltd. */
-'use strict';
 
-const PropTypes = require('prop-types');
-const React = require('react');
+import PropTypes from 'prop-types';
+import React from 'react';
 
-const Button = require('../button/button');
-
-require('./_button-row.scss');
+import Button from '../button/button';
+import './_button-row.scss';
 
 const ButtonRow = props => {
   const buttonListItems = props.buttons.map((button, index) => (
@@ -40,4 +38,4 @@ ButtonRow.propTypes = {
   )
 };
 
-module.exports = ButtonRow;
+export default ButtonRow;

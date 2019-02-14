@@ -1,10 +1,9 @@
 /* Copyright (C) 2017 Canonical Ltd. */
-'use strict';
 
-const React = require('react');
-const enzyme = require('enzyme');
+import React from 'react';
+import enzyme from 'enzyme';
 
-const BasicTableCell = require('./cell');
+import BasicTableCell from './cell';
 
 describe('BasicTableCell', () => {
   const renderComponent = (options = {}) =>

@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added React Styleguidist.
 - Added basic component docs.
 
+### Changed
+
+- Migrate to es6 modules.
+
 ### Removed
 
 - Removed Storybook.

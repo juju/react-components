@@ -1,16 +1,14 @@
 /* Copyright (C) 2017 Canonical Ltd. */
-'use strict';
 
-const classNames = require('classnames');
-const PropTypes = require('prop-types');
-const React = require('react');
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 
-const ButtonDropdown = require('../button-dropdown/button-dropdown');
-const Button = require('../button/button');
-const MachineUnit = require('../machine-unit/machine-unit');
-const SvgIcon = require('../svg-icon/svg-icon');
-
-require('./_machine.scss');
+import ButtonDropdown from '../button-dropdown/button-dropdown';
+import Button from '../button/button';
+import MachineUnit from '../machine-unit/machine-unit';
+import SvgIcon from '../svg-icon/svg-icon';
+import './_machine.scss';
 
 class Machine extends React.Component {
   /**
@@ -190,4 +188,4 @@ Machine.propTypes = {
   )
 };
 
-module.exports = Machine;
+export default Machine;

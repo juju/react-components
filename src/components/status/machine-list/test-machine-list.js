@@ -1,10 +1,9 @@
 /* Copyright (C) 2018 Canonical Ltd. */
-'use strict';
 
-const React = require('react');
-const enzyme = require('enzyme');
+import React from 'react';
+import enzyme from 'enzyme';
 
-const StatusMachineList = require('./machine-list');
+import StatusMachineList from './machine-list';
 
 describe('StatusMachineList', () => {
   let machines;

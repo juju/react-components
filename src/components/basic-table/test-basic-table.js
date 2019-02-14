@@ -1,10 +1,9 @@
 /* Copyright (C) 2017 Canonical Ltd. */
-'use strict';
 
-const React = require('react');
-const enzyme = require('enzyme');
+import React from 'react';
+import enzyme from 'enzyme';
 
-const BasicTable = require('./basic-table');
+import BasicTable from './basic-table';
 
 describe('BasicTable', () => {
   let headers, rows;

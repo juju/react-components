@@ -1,10 +1,9 @@
 /* Copyright (C) 2017 Canonical Ltd. */
-'use strict';
 
-const React = require('react');
-const enzyme = require('enzyme');
+import React from 'react';
+import enzyme from 'enzyme';
 
-const MachineUnit = require('./machine-unit');
+import MachineUnit from './machine-unit';
 
 describe('MachineUnit', () => {
   const renderComponent = (options = {}) =>

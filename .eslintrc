@@ -7,7 +7,7 @@ parserOptions:
   ecmaVersion: 2018
   ecmaFeatures:
     jsx: true
-  sourceType: "script"
+  sourceType: "module"
 plugins: ["react"]
 rules:
   arrow-parens: ["error", "as-needed"]

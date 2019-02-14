@@ -1,7 +1,6 @@
 /* Copyright (C) 2018 Canonical Ltd. */
-'use strict';
 
-const utils = require('./utils');
+import * as utils from './utils';
 
 describe('Shared utils', () => {
   describe('getHighestStatus', () => {

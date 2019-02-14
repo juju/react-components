@@ -1,10 +1,9 @@
 /* Copyright (C) 2018 Canonical Ltd. */
-'use strict';
 
-const React = require('react');
-const enzyme = require('enzyme');
+import React from 'react';
+import enzyme from 'enzyme';
 
-const StatusRelationList = require('./relation-list');
+import StatusRelationList from './relation-list';
 
 describe('StatusRelationList', () => {
   let applications, relations;
