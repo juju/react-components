@@ -1,14 +1,13 @@
 /* Copyright (C) 2018 Canonical Ltd. */
-'use strict';
 
-const PropTypes = require('prop-types');
-const React = require('react');
-const {urls} = require('jaaslib');
+import PropTypes from 'prop-types';
+import React from 'react';
+import {urls} from 'jaaslib';
 
-const maracaPropTypes = require('@canonical/maraca').propTypes;
-const StatusLabel = require('../label/label');
-const StatusTable = require('../table/table');
-const {getStatusClass, normaliseStatus} = require('../../../utils/utils');
+import {propTypes as maracaPropTypes} from '@canonical/maraca';
+import StatusLabel from '../label/label';
+import StatusTable from '../table/table';
+import {getStatusClass, normaliseStatus} from '../../../utils/utils';
 
 class StatusApplicationList extends React.Component {
   /**
@@ -157,4 +156,4 @@ StatusApplicationList.propTypes = {
   units: maracaPropTypes.units
 };
 
-module.exports = StatusApplicationList;
+export default StatusApplicationList;

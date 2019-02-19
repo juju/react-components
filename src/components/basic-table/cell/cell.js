@@ -1,9 +1,8 @@
 /* Copyright (C) 2017 Canonical Ltd. */
-'use strict';
 
-const classNames = require('classnames');
-const PropTypes = require('prop-types');
-const React = require('react');
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 /** Basic table React component used to display data in a table structure. */
 class BasicTableCell extends React.Component {
@@ -40,4 +39,4 @@ BasicTableCell.propTypes = {
   link: PropTypes.node
 };
 
-module.exports = BasicTableCell;
+export default BasicTableCell;

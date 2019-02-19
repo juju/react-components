@@ -1,14 +1,13 @@
 /* Copyright (C) 2018 Canonical Ltd. */
-'use strict';
 
-const PropTypes = require('prop-types');
-const React = require('react');
+import PropTypes from 'prop-types';
+import React from 'react';
 
-const maracaPropTypes = require('@canonical/maraca').propTypes;
-const StatusLabel = require('../label/label');
-const StatusTable = require('../table/table');
+import {propTypes as maracaPropTypes} from '@canonical/maraca';;
+import StatusLabel from '../label/label';
+import StatusTable from '../table/table';
 
-const {getStatusClass, normaliseStatus} = require('../../../utils/utils');
+import {getStatusClass, normaliseStatus} from '../../../utils/utils';
 
 class StatusMachineList extends React.Component {
   /**
@@ -107,4 +106,4 @@ StatusMachineList.propTypes = {
   statusFilter: PropTypes.string
 };
 
-module.exports = StatusMachineList;
+export default StatusMachineList;

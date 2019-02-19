@@ -1,13 +1,11 @@
 /* Copyright (C) 2017 Canonical Ltd. */
-'use strict';
 
-const classNames = require('classnames');
-const PropTypes = require('prop-types');
-const React = require('react');
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 
-const BasicTableRow = require('./row/row');
-
-require('./_basic-table.scss');
+import BasicTableRow from './row/row';
+import './_basic-table.scss';
 
 /** Basic table React component used to display data in a table structure. */
 class BasicTable extends React.Component {
@@ -127,4 +125,4 @@ BasicTable.propTypes = {
   tableClasses: PropTypes.array
 };
 
-module.exports = BasicTable;
+export default BasicTable;

@@ -1,11 +1,9 @@
 /* Copyright (C) 2017 Canonical Ltd. */
-'use strict';
 
-const classNames = require('classnames');
-const PropTypes = require('prop-types');
-const React = require('react');
-
-require('./_svg-icon.scss');
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
+import './_svg-icon.scss';
 
 class SvgIcon extends React.PureComponent {
   constructor(props) {
@@ -81,4 +79,4 @@ SvgIcon.propTypes = {
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
 
-module.exports = SvgIcon;
+export default SvgIcon;

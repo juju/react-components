@@ -1,13 +1,11 @@
 /* Copyright (C) 2018 Canonical Ltd. */
-'use strict';
 
-const PropTypes = require('prop-types');
-const React = require('react');
-const classNames = require('classnames');
+import PropTypes from 'prop-types';
+import React from 'react';
+import classNames from 'classnames';
 
-const {getStatusClass} = require('../../../utils/utils');
-
-require('./_label.scss');
+import {getStatusClass} from '../../../utils/utils';
+import './_label.scss';
 
 const StatusLabel = props => {
   const status = props.status;
@@ -21,4 +19,4 @@ StatusLabel.propTypes = {
   status: PropTypes.string.isRequired
 };
 
-module.exports = StatusLabel;
+export default StatusLabel;

@@ -1,11 +1,10 @@
-'use strict';
 // https://github.com/kentor/react-click-outside/blob/master/index.js
 
-const hoistNonReactStatic = require('hoist-non-react-statics');
-const React = require('react');
-const ReactDOM = require('react-dom');
+import hoistNonReactStatic from 'hoist-non-react-statics';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-module.exports = function enhanceWithClickOutside(WrappedComponent) {
+export default function enhanceWithClickOutside(WrappedComponent) {
   const componentName = WrappedComponent.displayName || WrappedComponent.name;
 
   class EnhancedComponent extends React.Component {

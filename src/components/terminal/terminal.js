@@ -1,23 +1,21 @@
 /* Copyright (C) 2017 Canonical Ltd. */
-'use strict';
 
-const classnames = require('classnames');
-const PropTypes = require('prop-types');
-const React = require('react');
-const shapeup = require('shapeup');
-const XTerm = require('xterm').Terminal;
-const WebfontLoader = require('xterm-webfont');
+import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
+import shapeup from 'shapeup';
+import {Terminal as XTerm} from 'xterm';
+import WebfontLoader from 'xterm-webfont';
 
-const SvgIcon = require('../svg-icon/svg-icon');
-
-require('./_terminal.scss');
-require('./xterm.scss');
+import SvgIcon from '../svg-icon/svg-icon';
+import './_terminal.scss';
+import './xterm.scss';
 
 // xterm.js loads plugins by requiring them. This changes the prototype of the
 // xterm object. This is inherently dirty, but not really up to us, and perhaps
 // not something we can change.
-const terminado = require('xterm/lib/addons/terminado/terminado');
-const fit = require('xterm/lib/addons/fit/fit');
+import * as terminado from 'xterm/lib/addons/terminado/terminado';
+import * as fit from 'xterm/lib/addons/fit/fit';
 
 /** Terminal component used to display the Juju shell. */
 class Terminal extends React.Component {
@@ -284,4 +282,4 @@ const OP_START = 'start';
 const CODE_OK = 'ok';
 const CODE_ERR = 'error';
 
-module.exports = Terminal;
+export default Terminal;

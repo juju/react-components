@@ -1,11 +1,10 @@
 /* Copyright (C) 2018 Canonical Ltd. */
-'use strict';
 
-const PropTypes = require('prop-types');
-const React = require('react');
+import PropTypes from 'prop-types';
+import React from 'react';
 
-const BasicTable = require('../../basic-table/basic-table');
-const utils = require('../../../utils/utils');
+import BasicTable from '../../basic-table/basic-table';
+import * as utils from '../../../utils/utils';
 
 class StatusModel extends React.Component {
   /**
@@ -174,4 +173,4 @@ StatusModel.propTypes = {
   statusFilter: PropTypes.string
 };
 
-module.exports = StatusModel;
+export default StatusModel;

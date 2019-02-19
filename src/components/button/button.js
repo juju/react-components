@@ -1,11 +1,9 @@
 /* Copyright (C) 2018 Canonical Ltd. */
-'use strict';
 
-const classnames = require('classnames');
-const PropTypes = require('prop-types');
-const React = require('react');
-
-require('./_button.scss');
+import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
+import './_button.scss';
 
 class Button extends React.Component {
   /**
@@ -62,4 +60,4 @@ Button.propTypes = {
   type: PropTypes.string
 };
 
-module.exports = Button;
+export default Button;

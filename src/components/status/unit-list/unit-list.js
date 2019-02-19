@@ -1,14 +1,13 @@
 /* Copyright (C) 2018 Canonical Ltd. */
-'use strict';
 
-const PropTypes = require('prop-types');
-const React = require('react');
+import PropTypes from 'prop-types';
+import React from 'react';
 
-const StatusLabel = require('../label/label');
-const StatusTable = require('../table/table');
+import StatusLabel from '../label/label';
+import StatusTable from '../table/table';
 
-const maracaPropTypes = require('@canonical/maraca').propTypes;
-const utils = require('../../../utils/utils');
+import {propTypes as maracaPropTypes} from '@canonical/maraca';
+import * as utils from '../../../utils/utils';
 
 class StatusUnitList extends React.Component {
   /**
@@ -178,4 +177,4 @@ StatusUnitList.propTypes = {
   units: maracaPropTypes.units
 };
 
-module.exports = StatusUnitList;
+export default StatusUnitList;

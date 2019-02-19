@@ -1,13 +1,12 @@
 /* Copyright (C) 2018 Canonical Ltd. */
-'use strict';
 
-const PropTypes = require('prop-types');
-const React = require('react');
+import PropTypes from 'prop-types';
+import React from 'react';
 
-const StatusTable = require('../table/table');
+import StatusTable from '../table/table';
 
-const maracaPropTypes = require('@canonical/maraca').propTypes;
-const {normaliseStatus} = require('../../../utils/utils');
+import {propTypes as maracaPropTypes} from '@canonical/maraca';
+import {normaliseStatus} from '../../../utils/utils';
 
 class StatusRemoteApplicationList extends React.Component {
   /**
@@ -78,4 +77,4 @@ StatusRemoteApplicationList.propTypes = {
   statusFilter: PropTypes.string
 };
 
-module.exports = StatusRemoteApplicationList;
+export default StatusRemoteApplicationList;

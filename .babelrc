@@ -1,4 +1,20 @@
 {
-  "presets": ["@babel/env", "@babel/react"],
-  "plugins": ["@babel/plugin-proposal-object-rest-spread"]
+  "presets": [[
+      "@babel/env", {
+        "modules": false
+      }
+    ],
+    "@babel/react"],
+  "plugins": ["@babel/plugin-proposal-object-rest-spread"],
+  "env": {
+    "test": {
+      "presets": [[
+          "@babel/env", {
+            "modules": "auto"
+          }
+        ],
+        "@babel/react"
+      ]
+    }
+  },
 }

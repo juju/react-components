@@ -1,19 +1,18 @@
 /* Copyright (C) 2017 Canonical Ltd. */
-'use strict';
 
-const PropTypes = require('prop-types');
-const React = require('react');
-const shapeup = require('shapeup');
+import PropTypes from 'prop-types';
+import React from 'react';
+import shapeup from 'shapeup';
 
-const StatusApplicationList = require('../application-list/application-list');
-const StatusModel = require('../model/model');
-const StatusMachineList = require('../machine-list/machine-list');
-const StatusRemoteApplicationList = require('../remote-application-list/remote-application-list');
-const StatusRelationList = require('../relation-list/relation-list');
-const StatusUnitList = require('../unit-list/unit-list');
-const Panel = require('../../panel/panel');
-const maracaPropTypes = require('@canonical/maraca').propTypes;
-const utils = require('../../../utils/utils');
+import StatusApplicationList from '../application-list/application-list';
+import StatusModel from '../model/model';
+import StatusMachineList from '../machine-list/machine-list';
+import StatusRemoteApplicationList from '../remote-application-list/remote-application-list';
+import StatusRelationList from '../relation-list/relation-list';
+import StatusUnitList from '../unit-list/unit-list';
+import Panel from '../../panel/panel';
+import {propTypes as maracaPropTypes} from '@canonical/maraca';
+import * as utils from '../../../utils/utils';
 
 /** Status React component used to display Juju status. */
 class Status extends React.Component {
@@ -253,4 +252,4 @@ Status.propTypes = {
   })
 };
 
-module.exports = Status;
+export default Status;

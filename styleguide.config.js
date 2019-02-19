@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = {
   components: 'src/components/**/*.js',
   ignore: ['src/components/**/test-*.js'],
