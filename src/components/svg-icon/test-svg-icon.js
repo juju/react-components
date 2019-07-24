@@ -1,10 +1,9 @@
 /* Copyright (C) 2017 Canonical Ltd. */
-'use strict';
 
-const React = require('react');
-const enzyme = require('enzyme');
+import React from 'react';
+import enzyme from 'enzyme';
 
-const SvgIcon = require('./svg-icon');
+import SvgIcon from './svg-icon';
 
 describe('SvgIcon', function() {
   const renderComponent = (options = {}) =>

@@ -1,11 +1,10 @@
-/* Copyright (C) 2018 Canonical Ltd. */
-'use strict';
+## StatusUnitList
 
-const React = require('react');
-const {storiesOf} = require('@storybook/react');
+A component for displaying the status of a list of Juju units.
 
-const StatusUnitList = require('./unit-list');
+Example usage:
 
+```jsx
 const applications = {
   etcd: {
     modelUUID: '32c9c2db-0955-459a-8201-539657ef0da1',
@@ -69,15 +68,13 @@ const units = {
     }
   }
 };
-
-storiesOf('StatusUnitList', module).addWithJSX('basic display', () => (
-  <StatusUnitList
-    applications={applications}
-    generateMachineURL={() => {}}
-    generateUnitOnClick={() => {}}
-    generateUnitURL={() => {}}
-    getIconPath={() => {}}
-    onMachineClick={() => {}}
-    units={units}
-  />
-));
+<StatusUnitList
+  applications={applications}
+  generateMachineURL={() => {}}
+  generateUnitOnClick={() => {}}
+  generateUnitURL={() => {}}
+  getIconPath={() => {}}
+  onMachineClick={() => {}}
+  units={units}
+/>;
+```

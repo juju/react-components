@@ -1,10 +1,9 @@
 /* Copyright (C) 2018 Canonical Ltd. */
-'use strict';
 
-const React = require('react');
-const enzyme = require('enzyme');
+import React from 'react';
+import enzyme from 'enzyme';
 
-const StatusModel = require('./model');
+import StatusModel from './model';
 
 describe('StatusModel', function() {
   let counts, model;

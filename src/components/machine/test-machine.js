@@ -1,10 +1,9 @@
 /* Copyright (C) 2017 Canonical Ltd. */
-'use strict';
 
-const React = require('react');
-const enzyme = require('enzyme');
+import React from 'react';
+import enzyme from 'enzyme';
 
-const Machine = require('./machine');
+import Machine from './machine';
 
 describe('Machine', () => {
   let machine, units;

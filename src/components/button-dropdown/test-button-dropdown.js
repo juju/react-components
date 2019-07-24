@@ -1,11 +1,9 @@
 /* Copyright (C) 2017 Canonical Ltd. */
 
-'use strict';
+import React from 'react';
+import enzyme from 'enzyme';
 
-const React = require('react');
-const enzyme = require('enzyme');
-
-const ButtonDropdown = require('./button-dropdown');
+import ButtonDropdown from './button-dropdown';
 
 describe('Button Dropdown', function() {
   const renderComponent = (options = {}) =>

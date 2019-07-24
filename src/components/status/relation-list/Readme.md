@@ -1,11 +1,10 @@
-/* Copyright (C) 2018 Canonical Ltd. */
-'use strict';
+## StatusRelationList
 
-const React = require('react');
-const {storiesOf} = require('@storybook/react');
+A component for displaying the status of a list of Juju relations.
 
-const StatusRelationList = require('./relation-list');
+Example usage:
 
+```jsx
 const applications = {
   etcd: {
     modelUUID: '32c9c2db-0955-459a-8201-539657ef0da1',
@@ -85,13 +84,11 @@ const relations = {
     ]
   }
 };
-
-storiesOf('StatusRelationList', module).addWithJSX('basic display', () => (
-  <StatusRelationList
-    applications={applications}
-    generateApplicationURL={() => {}}
-    getIconPath={() => {}}
-    onApplicationClick={() => {}}
-    relations={relations}
-  />
-));
+<StatusRelationList
+  applications={applications}
+  generateApplicationURL={() => {}}
+  getIconPath={() => {}}
+  onApplicationClick={() => {}}
+  relations={relations}
+/>;
+```

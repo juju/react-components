@@ -1,17 +1,14 @@
 /* Copyright (C) 2017 Canonical Ltd. */
 
-'use strict';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import shapeup from 'shapeup';
 
-const classNames = require('classnames');
-const PropTypes = require('prop-types');
-const React = require('react');
-const ReactDOM = require('react-dom');
-const shapeup = require('shapeup');
-
-const SvgIcon = require('../svg-icon/svg-icon');
-const DropdownMenu = require('../dropdown-menu/dropdown-menu');
-
-require('./_button-dropdown.scss');
+import SvgIcon from '../svg-icon/svg-icon';
+import DropdownMenu from '../dropdown-menu/dropdown-menu';
+import './_button-dropdown.scss';
 
 /**
   Creates a component that has an icon, which when clicked, opens a dropdown
@@ -207,4 +204,4 @@ ButtonDropdown.defaultProps = {
   icon: 'contextual-menu-16'
 };
 
-module.exports = ButtonDropdown;
+export default ButtonDropdown;

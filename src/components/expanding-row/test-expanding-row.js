@@ -1,12 +1,11 @@
 /* Copyright (C) 2017 Canonical Ltd. */
-'use strict';
 
-const React = require('react');
-const ReactDOM = require('react-dom');
-const ReactTestUtils = require('react-dom/test-utils');
-const enzyme = require('enzyme');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import ReactTestUtils from 'react-dom/test-utils';
+import enzyme from 'enzyme';
 
-const ExpandingRow = require('./expanding-row');
+import ExpandingRow from './expanding-row';
 
 describe('ExpandingRow', () => {
   const renderComponent = (options = {}) => {

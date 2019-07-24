@@ -1,11 +1,10 @@
 /* Copyright (C) 2018 Canonical Ltd. */
-'use strict';
 
-const PropTypes = require('prop-types');
-const React = require('react');
+import PropTypes from 'prop-types';
+import React from 'react';
 
-const maracaPropTypes = require('@canonical/maraca').propTypes;
-const StatusTable = require('../table/table');
+import {propTypes as maracaPropTypes} from '@canonical/maraca';
+import StatusTable from '../table/table';
 
 class StatusRelationList extends React.Component {
   /**
@@ -127,4 +126,4 @@ StatusRelationList.propTypes = {
   statusFilter: PropTypes.string
 };
 
-module.exports = StatusRelationList;
+export default StatusRelationList;

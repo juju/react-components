@@ -1,13 +1,11 @@
 /* Copyright (C) 2017 Canonical Ltd. */
-'use strict';
 
-const classNames = require('classnames');
-const PropTypes = require('prop-types');
-const React = require('react');
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 
-const ButtonDropdown = require('../button-dropdown/button-dropdown');
-
-require('./_machine-unit.scss');
+import ButtonDropdown from '../button-dropdown/button-dropdown';
+import './_machine-unit.scss';
 
 class MachineUnit extends React.Component {
   /**
@@ -59,4 +57,4 @@ MachineUnit.propTypes = {
   status: PropTypes.string.isRequired
 };
 
-module.exports = MachineUnit;
+export default MachineUnit;

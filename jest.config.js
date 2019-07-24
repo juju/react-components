@@ -1,6 +1,4 @@
-'use strict';
-
-const config = {
+module.exports = {
   roots: ['<rootDir>/src/'],
   setupFiles: [
     '<rootDir>/src/test/jest-setup.js',
@@ -13,5 +11,3 @@ const config = {
     '\\.scss$': '<rootDir>/src/test/proxy-module.js'
   }
 };
-
-module.exports = config;

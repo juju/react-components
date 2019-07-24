@@ -1,14 +1,12 @@
 /* Copyright (C) 2017 Canonical Ltd. */
-'use strict';
 
-const classNames = require('classnames');
-const PropTypes = require('prop-types');
-const React = require('react');
-const enhanceWithClickOutside = require('../../utils/react-click-outside');
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
+import enhanceWithClickOutside from '../../utils/react-click-outside';
 
-const Panel = require('../panel/panel');
-
-require('./_dropdown-menu.scss');
+import Panel from '../panel/panel';
+import './_dropdown-menu.scss';
 
 /**
   Creates a dropdown menu with the supplied children as items.
@@ -41,4 +39,4 @@ DropdownMenu.propTypes = {
   handleClickOutside: PropTypes.func
 };
 
-module.exports = enhanceWithClickOutside(DropdownMenu);
+export default enhanceWithClickOutside(DropdownMenu);

@@ -1,11 +1,10 @@
-/* Copyright (C) 2018 Canonical Ltd. */
-'use strict';
+## StatusMachineList
 
-const React = require('react');
-const {storiesOf} = require('@storybook/react');
+A component for displaying the status of a list of Juju machines.
 
-const StatusMachineList = require('./machine-list');
+Example usage:
 
+```jsx
 const machines = {
   '0': {
     modelUUID: '32c9c2db-0955-459a-8201-539657ef0da1',
@@ -47,11 +46,9 @@ const machines = {
     wantsVote: false
   }
 };
-
-storiesOf('StatusMachineList', module).addWithJSX('basic display', () => (
-  <StatusMachineList
-    generateMachineOnClick={() => {}}
-    generateMachineURL={() => {}}
-    machines={machines}
-  />
-));
+<StatusMachineList
+  generateMachineOnClick={() => {}}
+  generateMachineURL={() => {}}
+  machines={machines}
+/>;
+```
